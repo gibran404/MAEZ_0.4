@@ -40,6 +40,19 @@ public class RoomBehaviour : MonoBehaviour
             // }
         }
 
+        //delete the wall/door that is not active
+        for (int i = 0; i < doors.Length; i++)
+        {
+            if (doors[i].activeSelf == false)
+            {
+                Destroy(doors[i]);
+            }
+            if (walls[i].activeSelf == false)
+            {
+                Destroy(walls[i]);
+            }
+        }
+
         AddClutter();
     }
 
