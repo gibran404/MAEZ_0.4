@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallRandomizer : MonoBehaviour
+public class VariantRandomizer : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject[] walls;
