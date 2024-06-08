@@ -135,17 +135,30 @@ namespace StarterAssets
 
         private void OtherChecks()
         {
-            // for interating with objects
+            // for interacting with doors
             if (Input.GetKeyDown(KeyCode.E))
             {
-                _animator.SetBool("Interacting", true);
-                // _animator.SetBool("Interacting", false);
+                Collider[] colliders = Physics.OverlapSphere(transform.position, 2f);
+                bool doorNearby = false;
+                foreach (Collider collider in colliders)
+                {
+                    if (collider.CompareTag("Door"))
+                    {
+                    doorNearby = true;
+                    break;
+                    }
+                }
+
+                if (doorNearby)
+                {
+                    _animator.SetBool("Interacting", true);
+                }
+                
             }
             else
             {
                 _animator.SetBool("Interacting", false);
             }
-            
         }
 
 
@@ -165,6 +178,7 @@ namespace StarterAssets
         {
             _animIDWalking = Animator.StringToHash("Walking");
             _animIDRunning = Animator.StringToHash("Running");
+
         }
 
         private void GroundedCheck()

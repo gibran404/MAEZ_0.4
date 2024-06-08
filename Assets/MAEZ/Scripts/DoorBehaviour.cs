@@ -45,8 +45,11 @@ public class DoorBehaviour : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E) && canToggleDoor)
             {
+                // initiate the Interacting animation for the player without the playercontroller
+                // other.GetComponent<Animator>().SetBool("Interacting", true);
+
                 StartCoroutine(DebounceToggle());
-                Debug.Log("E is pressed");
+                // Debug.Log("E is pressed");
                 if (isOpenedFront)
                 {
                     DoorAnimator.Play("DoorCloseFront", 0, 0.0f);
@@ -61,18 +64,18 @@ public class DoorBehaviour : MonoBehaviour
                 }
                 else if (isClosed)
                 {
-                    Debug.Log("Opening door");
+                    // Debug.Log("Opening door");
                     if (colliderFront.bounds.Contains(other.transform.position))
                     {
                         DoorAnimator.Play("DoorOpenFront", 0, 0.0f);
-                        Debug.Log("Door opened from front");
+                        // Debug.Log("Door opened from front");
                         isOpenedFront = true;
                         isClosed = false;
                     }
                     else if (colliderBack.bounds.Contains(other.transform.position))
                     {
                         DoorAnimator.Play("DoorOpenBack", 0, 0.0f);
-                        Debug.Log("Door opened from back");
+                        // Debug.Log("Door opened from back");
                         isOpenedBack = true;
                         isClosed = false;
                     }
