@@ -555,8 +555,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Dodge_Left
-      takeName: Dodge_Left
+      name: Dodge_Forward (1)
+      takeName: Dodge_Forward
       internalID: -8338831036711338807
       firstFrame: 0
       lastFrame: 12

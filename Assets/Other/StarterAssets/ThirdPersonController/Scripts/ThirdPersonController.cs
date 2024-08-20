@@ -210,7 +210,28 @@ namespace StarterAssets
         private void Move()
         {
             float Gravity = -30f;
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            float targetSpeed ; //= _input.sprint ? SprintSpeed : MoveSpeed;
+            float stam = GetComponent<PlayerVitals>().stamina;
+
+            if (_input.sprint)
+            {
+                //decrease stamina of the playervitals class attached to the same game object
+                if (stam > 0)
+                {
+                    targetSpeed = SprintSpeed;
+                    GetComponent<PlayerVitals>().reduceStamina();
+                }
+                else
+                {
+                    targetSpeed = MoveSpeed;
+                    GetComponent<PlayerVitals>().regenStamina();
+                }
+            }
+            else
+            {
+                targetSpeed = MoveSpeed;
+                GetComponent<PlayerVitals>().regenStamina();
+            }
 
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 
