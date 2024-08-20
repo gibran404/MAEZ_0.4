@@ -211,7 +211,7 @@ namespace StarterAssets
         {
             float Gravity = -30f;
             float targetSpeed ; //= _input.sprint ? SprintSpeed : MoveSpeed;
-            float stam = GetComponent<PlayerVitals>().stamina;
+            float stam = GetComponent<PlayerItemsandVitals>().stamina;
 
             if (_input.sprint)
             {
@@ -219,18 +219,18 @@ namespace StarterAssets
                 if (stam > 0)
                 {
                     targetSpeed = SprintSpeed;
-                    GetComponent<PlayerVitals>().reduceStamina();
+                    GetComponent<PlayerItemsandVitals>().reduceStamina();
                 }
                 else
                 {
                     targetSpeed = MoveSpeed;
-                    GetComponent<PlayerVitals>().regenStamina();
+                    GetComponent<PlayerItemsandVitals>().regenStamina();
                 }
             }
             else
             {
                 targetSpeed = MoveSpeed;
-                GetComponent<PlayerVitals>().regenStamina();
+                GetComponent<PlayerItemsandVitals>().regenStamina();
             }
 
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
