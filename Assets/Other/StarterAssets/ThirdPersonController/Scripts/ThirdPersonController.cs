@@ -59,6 +59,10 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+
+        [Header("Other")]
+        public GameObject PlayerManager;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -98,6 +102,9 @@ namespace StarterAssets
 #endif
             }
         }
+
+
+        
 
         private void Awake()
         {
@@ -211,26 +218,24 @@ namespace StarterAssets
         {
             float Gravity = -30f;
             float targetSpeed ; //= _input.sprint ? SprintSpeed : MoveSpeed;
-            float stam = GetComponent<PlayerItemsandVitals>().stamina;
 
             if (_input.sprint)
             {
-                //decrease stamina of the playervitals class attached to the same game object
-                if (stam > 0)
+                if (PlayerManager.GetComponent<PlayerItemsandVitals>().stamina > 0)
                 {
                     targetSpeed = SprintSpeed;
-                    GetComponent<PlayerItemsandVitals>().reduceStamina();
+                    PlayerManager.GetComponent<PlayerItemsandVitals>().reduceStamina();
                 }
                 else
                 {
                     targetSpeed = MoveSpeed;
-                    GetComponent<PlayerItemsandVitals>().regenStamina();
+                    PlayerManager.GetComponent<PlayerItemsandVitals>().regenStamina();
                 }
             }
             else
             {
                 targetSpeed = MoveSpeed;
-                GetComponent<PlayerItemsandVitals>().regenStamina();
+                PlayerManager.GetComponent<PlayerItemsandVitals>().regenStamina();
             }
 
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;

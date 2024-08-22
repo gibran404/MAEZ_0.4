@@ -6,6 +6,15 @@ using UnityEngine.UI;
 public class PlayerItemsandVitals : MonoBehaviour
 {
 
+    [Header("UI Elements")]
+    public GameObject healthBar;
+    public GameObject stamBar;
+    public GameObject manaBar;
+    
+
+
+    [Header("Other")]
+
     public Text vitalsText;
     public Text healthPotionText;
     public Text manaPotionText;
@@ -78,9 +87,18 @@ public class PlayerItemsandVitals : MonoBehaviour
                 torchUI.SetActive(false);
             }
         }
-        //remove lter
-    }
 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            ReduceHealthBig();
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            ReduceHealthSmall();
+        }
+
+        //remove later
+    }
     void updateVitals()
     {
         vitalsText.text = "Health: " + health + "\n" + "Stamina: " + stamina + "\n" + "Mana: " + mana + "\n" + "Sanity: " + sanity + "\n" + "Health Potions: " + healthPotionCount + "\n" + "Mana Potions: " + manaPotionCount + "\n" + "Stamina Potions: " + staminaPotionCount;
@@ -88,7 +106,8 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     public void ReduceHealthBig()
     {
-        health -= 40;
+        health -= 30;
+        healthBar.GetComponent<VitalBar>().vitalDeduct(30);
         if (health < 0)
         {
             health = 0;
@@ -97,7 +116,8 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     public void ReduceHealthSmall()
     {
-        health -= 15;
+        health -= 10;
+        healthBar.GetComponent<VitalBar>().vitalDeduct(10);
         if (health < 0)
         {
             health = 0;
@@ -107,6 +127,7 @@ public class PlayerItemsandVitals : MonoBehaviour
     public void RegenHealth()
     {
         health += 50;
+        healthBar.GetComponent<VitalBar>().vitalRegen(50);
         if (health > 100)
         {
             health = 100;
@@ -116,6 +137,7 @@ public class PlayerItemsandVitals : MonoBehaviour
     public void ReduceMana()
     {
         mana -= 10;
+        manaBar.GetComponent<VitalBar>().vitalDeduct(10);
         if (mana < 0)
         {
             mana = 0;
@@ -125,6 +147,7 @@ public class PlayerItemsandVitals : MonoBehaviour
     public void RegenMana()
     {
         mana += 50;
+        manaBar.GetComponent<VitalBar>().vitalRegen(50);
         if (mana > 100)
         {
             mana = 100;
@@ -134,6 +157,7 @@ public class PlayerItemsandVitals : MonoBehaviour
     public void reduceStamina() // called from player controller script
     {
         stamina -= 0.4f;
+        stamBar.GetComponent<VitalBar>().vitalDeduct(0.4f);
     }
 
     public void regenStamina() // called from player controller script
@@ -141,6 +165,7 @@ public class PlayerItemsandVitals : MonoBehaviour
         if (stamina < 100)
         {
             stamina += 0.5f;
+            stamBar.GetComponent<VitalBar>().vitalRegen(0.5f);
         }
     }
 
