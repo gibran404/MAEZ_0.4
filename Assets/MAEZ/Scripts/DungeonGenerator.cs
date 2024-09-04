@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using Unity.AI.Navigation;
 
 public class DungeonGenerator : MonoBehaviour
 {
@@ -120,7 +121,7 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-
+        GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     void MazeGenerator()
