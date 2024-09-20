@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -34,7 +35,15 @@ public class dealDamage : MonoBehaviour
             if (other.tag == "Player")
             {
                 // reduce player health from the PlayerItemsandVitals script of the playermanager gameobject
-                FindObjectOfType<PlayerItemsandVitals>().ReduceHealthBig();
+                if (ThirdPersonController.Blocked)
+                {
+                    FindObjectOfType<PlayerItemsandVitals>().ReduceHealthSmall();
+
+                }
+                else
+                {
+                    FindObjectOfType<PlayerItemsandVitals>().ReduceHealthBig();
+                }
                 Debug.Log("Player health reduced");
             }
         }

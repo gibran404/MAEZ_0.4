@@ -20,7 +20,7 @@ namespace StarterAssets
         [Tooltip("Sprint speed of the character in m/s")]
         public float SprintSpeed = 5.335f;
         public bool SprintFlag = false;
-        public bool Blocked = false;
+        public static bool Blocked = false;
 
         [Tooltip("How fast the character turns to face movement direction")]
         [Range(0.0f, 0.3f)]
@@ -175,7 +175,6 @@ namespace StarterAssets
                 Blocked = true;
                 // _animator.SetBool("Blocking", true);
                 _animator.SetBool("Blocked", true);
-
             }
             else if (Input.GetMouseButtonUp(1))
             {

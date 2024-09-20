@@ -159,8 +159,8 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     public void ReduceHealthSmall()
     {
-        health -= 10;
-        healthBar.GetComponent<VitalBar>().vitalDeduct(10);
+        health -= 15;
+        healthBar.GetComponent<VitalBar>().vitalDeduct(15);
         if (health < 0)
         {
             health = 0;
