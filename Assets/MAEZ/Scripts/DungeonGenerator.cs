@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-using System.IO;
 using Unity.AI.Navigation;
 
 public class DungeonGenerator : MonoBehaviour
@@ -26,7 +24,7 @@ public class DungeonGenerator : MonoBehaviour
         {
             // 0 - cannot spawn 1 - can spawn 2 - HAS to spawn
 
-            if (x>= minPosition.x && x<=maxPosition.x && y >= minPosition.y && y <= maxPosition.y)
+            if (x >= minPosition.x && x <= maxPosition.x && y >= minPosition.y && y <= maxPosition.y)
             {
                 return obligatory ? 2 : 1;
             }
@@ -45,17 +43,22 @@ public class DungeonGenerator : MonoBehaviour
     public GameObject DungeonRooms;
     private int PathCount = 0;
     private int RoomCount = 0;
+    private int lastCell; // Variable to store the index of the last cell visited
 
     // Start is called before the first frame update
     void Start()
     {
+        size = GameVariables.DungeonSize;
+
         PathCount = 0;
         RoomCount = 0;
-        
+
         MazeGenerator();
 
         Debug.Log("PathCount: " + PathCount);
         Debug.Log("RoomCount: " + RoomCount);
+        Debug.Log("Dungeon Size: " + size);
+
     }
 
     void ResetDungeon()
@@ -73,7 +76,6 @@ public class DungeonGenerator : MonoBehaviour
 
     void GenerateDungeon()
     {
-
         for (int i = 0; i < size.x; i++)
         {
             for (int j = 0; j < size.y; j++)
@@ -84,40 +86,51 @@ public class DungeonGenerator : MonoBehaviour
                     int randomRoom = -1;
                     List<int> availableRooms = new List<int>();
 
-                    for (int k = 0; k < rooms.Length; k++)
-                    {
-                        int p = rooms[k].ProbabilityOfSpawning(i, j);
+                    // Check if this is the last cell that was visited
+                    bool isLastCell = (i + j * size.x) == lastCell;
 
-                        if(p == 2)
+                    if (isLastCell)
+                    {
+                        // Force the last room in the array to be placed
+                        randomRoom = rooms.Length - 1; // Index of the last room in the array
+                    }
+                    else
+                    {
+                        // Otherwise, choose a room based on the rules
+                        for (int k = 0; k < rooms.Length; k++)
                         {
-                            randomRoom = k;
-                            break;
-                        } else if (p == 1)
+                            int p = rooms[k].ProbabilityOfSpawning(i, j);
+
+                            if (p == 2)
+                            {
+                                randomRoom = k;
+                                break;
+                            }
+                            else if (p == 1)
+                            {
+                                availableRooms.Add(k);
+                            }
+                        }
+
+                        if (randomRoom == -1)
                         {
-                            availableRooms.Add(k);
+                            if (availableRooms.Count > 0)
+                            {
+                                randomRoom = availableRooms[Random.Range(0, availableRooms.Count)];
+                            }
+                            else
+                            {
+                                randomRoom = 0;
+                            }
                         }
                     }
 
-                    if(randomRoom == -1)
-                    {
-                        if (availableRooms.Count > 0)
-                        {
-                            randomRoom = availableRooms[Random.Range(0, availableRooms.Count)];
-                        }
-                        else
-                        {
-                            randomRoom = 0;
-                        }
-                    }
-                    // var newRoom = Instantiate(rooms[randomRoom].room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
-
-                    //instantiate under DungeonRoom gameobject for cleaner hierarchy
+                    // Instantiate the room under DungeonRooms game object for cleaner hierarchy
                     var newRoom = Instantiate(rooms[randomRoom].room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, DungeonRooms.transform).GetComponent<RoomBehaviour>();
                     RoomCount++;
 
                     newRoom.UpdateRoom(currentCell.status);
                     newRoom.name += " " + i + "-" + j;
-
                 }
             }
         }
@@ -139,49 +152,45 @@ public class DungeonGenerator : MonoBehaviour
         }
 
         int currentCell = startPos;
-
         Stack<int> path = new Stack<int>();
-
         int k = 0;
 
-        while (k<100000)
+        while (k < 100000)
         {
             k++;
-
             board[currentCell].visited = true;
 
-            if(currentCell == board.Count - 1)
+            // Update the lastCell whenever a new cell is visited
+            lastCell = currentCell;
+
+            if (currentCell == board.Count - 1)
             {
                 break;
             }
 
-            //Check the cell's neighbors
+            // Check the cell's neighbors
             List<int> neighbors = CheckNeighbors(currentCell);
 
-            // if (neighbors.Count == 0)
             if (neighbors.Count <= 1)
             {
-                // if (path.Count == 0)
-                if (path.Count <=1)
+                if (path.Count <= 1)
                 {
                     break;
                 }
                 else
                 {
                     currentCell = path.Pop();
-                    
                     PathCount++;
                 }
             }
             else
             {
                 path.Push(currentCell);
-
                 int newCell = neighbors[Random.Range(0, neighbors.Count)];
 
                 if (newCell > currentCell)
                 {
-                    //down or right
+                    // Down or right
                     if (newCell - 1 == currentCell)
                     {
                         board[currentCell].status[2] = true;
@@ -197,7 +206,7 @@ public class DungeonGenerator : MonoBehaviour
                 }
                 else
                 {
-                    //up or left
+                    // Up or left
                     if (newCell + 1 == currentCell)
                     {
                         board[currentCell].status[3] = true;
@@ -211,10 +220,9 @@ public class DungeonGenerator : MonoBehaviour
                         board[currentCell].status[1] = true;
                     }
                 }
-
             }
-
         }
+
         GenerateDungeon();
     }
 
@@ -222,33 +230,30 @@ public class DungeonGenerator : MonoBehaviour
     {
         List<int> neighbors = new List<int>();
 
-        //check up neighbor
-        if (cell - size.x >= 0 && !board[(cell-size.x)].visited)
+        // Check up neighbor
+        if (cell - size.x >= 0 && !board[(cell - size.x)].visited)
         {
             neighbors.Add((cell - size.x));
         }
-        
 
-        //check down neighbor
+        // Check down neighbor
         if (cell + size.x < board.Count && !board[(cell + size.x)].visited)
         {
             neighbors.Add((cell + size.x));
         }
 
-        //check right neighbor
-        if ((cell+1) % size.x != 0 && !board[(cell +1)].visited)
+        // Check right neighbor
+        if ((cell + 1) % size.x != 0 && !board[(cell + 1)].visited)
         {
-            neighbors.Add((cell +1));
+            neighbors.Add((cell + 1));
         }
 
-        //check left neighbor
+        // Check left neighbor
         if (cell % size.x != 0 && !board[(cell - 1)].visited)
         {
-            neighbors.Add((cell -1));
+            neighbors.Add((cell - 1));
         }
+
         return neighbors;
     }
 }
-
-
-

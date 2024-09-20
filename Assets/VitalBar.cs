@@ -5,39 +5,57 @@ using UnityEngine.UI;
 
 public class VitalBar : MonoBehaviour
 {
-    public Slider healthSlider;
-    public Slider easeHealthSlider;
-    public float maxHealth = 100f;
-    public float health;
+    public Slider vitalSlider;
+    public Slider easeVitalSlider;
+    public float maxVital = 100f;
+    public float vital;
     private float lerpSpeed = 0.05f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        health = maxHealth;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (healthSlider.value != health)
+        if (vitalSlider.value != vital)
         {
-            healthSlider.value = health;
+            if (vital > maxVital)
+            {
+                vital = maxVital;
+            }
+            else if (vital <= 0)
+            {
+                vital = 0;
+            }
+            vitalSlider.value = vital;
+            
         }
 
-        if (healthSlider.value != easeHealthSlider.value)
+        if (vitalSlider.value != easeVitalSlider.value)
         {
-            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, health,lerpSpeed);
+            easeVitalSlider.value = Mathf.Lerp(easeVitalSlider.value, vital,lerpSpeed);
         }
     }
 
     public void vitalDeduct(float damage)
     {
-        health -= damage;
+        vital -= damage;
     }
 
     public void vitalRegen(float regen)
     {
-        health += regen;
+        vital += regen;
+    }
+
+    public void setMaxVital()
+    {
+        vital = maxVital;
+    }
+
+    public void setZeroVital()
+    {
+        vital = 0;
+    }
+    public void setVital(float newVital)
+    {
+        vital = newVital;
     }
 }

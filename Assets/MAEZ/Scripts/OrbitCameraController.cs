@@ -10,19 +10,22 @@ public class OrbitCameraController : MonoBehaviour
     public float sensitivity = 1f;
     public bool rightMouseMovement = true;
 
-    private bool isRightMouseButtonDown = false;
+    // private bool isRightMouseButtonDown = false;
+    private bool isRightMouseButtonDown = true;
+
+
 
     void Update()
     {
-        // Check if the right mouse button is down
-        if (Input.GetMouseButtonDown(1))
-        {
-            isRightMouseButtonDown = true;
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            isRightMouseButtonDown = false;
-        }
+        // // Check if the right mouse button is down
+        // if (Input.GetMouseButtonDown(1))
+        // {
+        //     isRightMouseButtonDown = true;
+        // }
+        // if (Input.GetMouseButtonUp(1))
+        // {
+        //     isRightMouseButtonDown = false;
+        // }
 
         // If right mouse button is held down, move the camera
         if (rightMouseMovement && isRightMouseButtonDown)

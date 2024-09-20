@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
@@ -18,6 +19,8 @@ namespace StarterAssets
 
         [Tooltip("Sprint speed of the character in m/s")]
         public float SprintSpeed = 5.335f;
+        public bool SprintFlag = false;
+        public bool Blocked = false;
 
         [Tooltip("How fast the character turns to face movement direction")]
         [Range(0.0f, 0.3f)]
@@ -160,12 +163,26 @@ namespace StarterAssets
                 {
                     _animator.SetBool("Interacting", true);
                 }
-                
             }
             else
             {
                 _animator.SetBool("Interacting", false);
             }
+
+            // if rightclick pressed, player will block
+            if (Input.GetMouseButtonDown(1))
+            {
+                Blocked = true;
+                // _animator.SetBool("Blocking", true);
+                _animator.SetBool("Blocked", true);
+
+            }
+            else if (Input.GetMouseButtonUp(1))
+            {
+                Blocked = false;
+                _animator.SetBool("Blocked", false);
+            }
+
         }
 
 
@@ -219,24 +236,38 @@ namespace StarterAssets
             float Gravity = -30f;
             float targetSpeed ; //= _input.sprint ? SprintSpeed : MoveSpeed;
 
-            if (_input.sprint)
+            if (_input.sprint && !Blocked)
             {
-                if (PlayerManager.GetComponent<PlayerItemsandVitals>().stamina > 0)
+                if (PlayerItemsandVitals.stamina > 1 && SprintFlag)
                 {
                     targetSpeed = SprintSpeed;
                     PlayerManager.GetComponent<PlayerItemsandVitals>().reduceStamina();
                 }
                 else
                 {
+                    //when running and stam not availible, player can't run
+                    SprintFlag = false;
                     targetSpeed = MoveSpeed;
+                    GetComponent<StarterAssetsInputs>().sprint = false; //controls animation
                     PlayerManager.GetComponent<PlayerItemsandVitals>().regenStamina();
                 }
             }
-            else
+            else if (!Blocked)
             {
+                if (PlayerItemsandVitals.stamina > 5)
+                {
+                    //when not running, and stam availible, player can run again
+                    // player must stop running to run again after regen
+                    SprintFlag = true;
+                }
                 targetSpeed = MoveSpeed;
                 PlayerManager.GetComponent<PlayerItemsandVitals>().regenStamina();
             }
+            else
+            {
+                targetSpeed = 0.5f;
+            }
+            
 
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 
