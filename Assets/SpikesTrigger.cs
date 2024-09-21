@@ -38,7 +38,7 @@ public class SpikesTrigger : MonoBehaviour
     //after 2 seconds, spikes will be moved up by 2
     IEnumerator ActivateSpikes()
     {
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("Spikes Activated");
         Spikes.transform.position += new Vector3(0, 2, 0);
         StartCoroutine(ResetSpikes());
@@ -52,6 +52,6 @@ public class SpikesTrigger : MonoBehaviour
         triggered = false;
         Spikes.transform.position += new Vector3(0, -2, 0);
         transform.position += new Vector3(0, 0.05f, 0);
-        
+
     }
 }

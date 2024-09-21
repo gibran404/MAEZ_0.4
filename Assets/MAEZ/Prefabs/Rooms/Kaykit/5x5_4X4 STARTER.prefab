@@ -1691,13 +1691,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7098827973350732673, guid: 4ec66022a2912a24eb6bb15f124f7041, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098910342680087993, guid: 4ec66022a2912a24eb6bb15f124f7041, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099847061818354689, guid: 4ec66022a2912a24eb6bb15f124f7041, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7132182087632543991, guid: 4ec66022a2912a24eb6bb15f124f7041, type: 3}
       propertyPath: simulationSpeed
       value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 7132182087632543991, guid: 4ec66022a2912a24eb6bb15f124f7041, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132182087632543991, guid: 4ec66022a2912a24eb6bb15f124f7041, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132281369240800281, guid: 4ec66022a2912a24eb6bb15f124f7041, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
