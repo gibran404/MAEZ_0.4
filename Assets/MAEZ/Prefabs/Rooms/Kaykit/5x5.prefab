@@ -61,7 +61,8 @@ MonoBehaviour:
   Segments: []
   isHallway: 0
   GenerateClutter: 0
-  Clutter: []
+  Clutter1: []
+  Clutter2: []
 --- !u!1 &1734692073221597062
 GameObject:
   m_ObjectHideFlags: 0

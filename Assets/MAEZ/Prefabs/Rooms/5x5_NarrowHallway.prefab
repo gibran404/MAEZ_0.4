@@ -115,6 +115,9 @@ MonoBehaviour:
   - {fileID: 2267580935818766334}
   - {fileID: 320982242998140871}
   isHallway: 1
+  GenerateClutter: 0
+  Clutter1: []
+  Clutter2: []
 --- !u!1 &309881510705691818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,7 +2168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8027417759350982118
 Transform:
   m_ObjectHideFlags: 0
