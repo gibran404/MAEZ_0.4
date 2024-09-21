@@ -10,6 +10,7 @@ public class VariantRandomizer : MonoBehaviour
     {
         //randomly pick one of the walls and destroy the rest
         int randomWall = Random.Range(0, walls.Length);
+        walls[randomWall].SetActive(true);
         for (int i = 0; i < walls.Length; i++)
         {
             if (i != randomWall)

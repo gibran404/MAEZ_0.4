@@ -13,7 +13,9 @@ public class RoomBehaviour : MonoBehaviour
     [SerializeField] public bool isHallway = false;
 
     [SerializeField] private bool GenerateClutter = false;
-    [SerializeField] private  GameObject[] Clutter;
+
+    [SerializeField] private  GameObject[] Clutter1; // for main clutetr i.e furnoture
+    [SerializeField] private  GameObject[] Clutter2; // for misc clutter i.e torches, etc
 
     public void UpdateRoom(bool[] status)
     {
@@ -53,7 +55,8 @@ public class RoomBehaviour : MonoBehaviour
             }
         }
 
-        AddClutter();
+        AddClutter1();
+        AddClutter2();
     }
 
     private bool UpdateHallway(bool[] status)
@@ -144,34 +147,63 @@ public class RoomBehaviour : MonoBehaviour
         return true;
     }
 
-    public void AddClutter()
+    public void AddClutter1()
     {
-        if (Clutter.Length <= 2)
+        if (Clutter1.Length <= 2)
         {
             return;
         }
         if (GenerateClutter)
         {
-            Debug.Log("Adding Clutter");
-            for (int i = 0; i < Clutter.Length; i++)
+            for (int i = 0; i < Clutter1.Length; i++)
             {
                 if (Random.Range(0, 100) < 50)
                 {
-                    Clutter[i].SetActive(true);
+                    Clutter1[i].SetActive(true);
                 }
                 else{
-                    Clutter[i].SetActive(false);
-                    Destroy(Clutter[i]);
+                    Clutter1[i].SetActive(false);
+                    Destroy(Clutter1[i]);
                 }
             }
         }
         else
         {
-            for (int i = 0; i < Clutter.Length; i++)
+            for (int i = 0; i < Clutter1.Length; i++)
             {
-                Clutter[i].SetActive(false);
-                Destroy(Clutter[i]);
+                Clutter1[i].SetActive(false);
+                Destroy(Clutter1[i]);
+            }
+        }        
+    }
+    
+    public void AddClutter2()
+    {
+        if (Clutter2.Length <= 2)
+        {
+            return;
+        }
+        if (GenerateClutter)
+        {
+            for (int i = 0; i < Clutter2.Length; i++)
+            {
+                if (Random.Range(0, 100) < 50)
+                {
+                    Clutter2[i].SetActive(true);
+                }
+                else{
+                    Clutter2[i].SetActive(false);
+                    Destroy(Clutter2[i]);
+                }
             }
         }
+        else
+        {
+            for (int i = 0; i < Clutter2.Length; i++)
+            {
+                Clutter2[i].SetActive(false);
+                Destroy(Clutter2[i]);
+            }
+        }        
     }
 }

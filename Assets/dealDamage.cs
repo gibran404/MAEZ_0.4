@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 public class dealDamage : MonoBehaviour
 {
     public string itemOwner;
+
+    public string DamageAmount;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +36,11 @@ public class dealDamage : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                // reduce player health from the PlayerItemsandVitals script of the playermanager gameobject
-                if (ThirdPersonController.Blocked)
+                if (DamageAmount == "Small")
+                {
+                    FindObjectOfType<PlayerItemsandVitals>().ReduceHealthSmall();
+                }
+                else if (ThirdPersonController.Blocked)
                 {
                     FindObjectOfType<PlayerItemsandVitals>().ReduceHealthSmall();
 

@@ -88,8 +88,8 @@ public class PlayerItemsandVitals : MonoBehaviour
             // If 1 second has passed, reduce mana
             if (manaReductionTimer >= 1f && mana > 1)
             {
-                PlayerItemsandVitals.mana -= 10;
-                manaBar.GetComponent<VitalBar>().vitalDeduct(10);
+                PlayerItemsandVitals.mana -= 2;
+                manaBar.GetComponent<VitalBar>().vitalDeduct(2);
                 manaReductionTimer = 0f;  // Reset timer
             }
             else if (mana <= 1)

@@ -15,6 +15,5 @@ public class LightOrb : MonoBehaviour
             transform.position.y,
             transform.position.z + radius * Mathf.Sin(Time.time)
         );
-
     }
 }
