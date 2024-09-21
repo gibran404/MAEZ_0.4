@@ -1321,7 +1321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &496303751
 Transform:
   m_ObjectHideFlags: 0
@@ -1373,8 +1373,8 @@ MonoBehaviour:
     maxPosition: {x: 0, y: 0}
     obligatory: 1
   - room: {fileID: 289644098490686285, guid: c92f097fde89efb4095bd5a9e9ff6481, type: 3}
-    minPosition: {x: -1, y: -1}
-    maxPosition: {x: -1, y: -1}
+    minPosition: {x: 99999, y: 99999}
+    maxPosition: {x: 99999, y: 99999}
     obligatory: 1
   offset: {x: 20, y: 20}
   DungeonRooms: {fileID: 1182955003}
@@ -5075,7 +5075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1657659020
 Transform:
   m_ObjectHideFlags: 0
@@ -5137,10 +5137,14 @@ MonoBehaviour:
   size: {x: 10, y: 10}
   startPos: 0
   rooms:
-  - room: {fileID: 289644098490686285, guid: c92f097fde89efb4095bd5a9e9ff6481, type: 3}
+  - room: {fileID: 289644098490686285, guid: 2724722dcd56502419493a766a1802e7, type: 3}
     minPosition: {x: 0, y: 0}
     maxPosition: {x: 0, y: 0}
     obligatory: 0
+  - room: {fileID: 289644098490686285, guid: c92f097fde89efb4095bd5a9e9ff6481, type: 3}
+    minPosition: {x: -1, y: -1}
+    maxPosition: {x: -1, y: -1}
+    obligatory: 1
   offset: {x: 20, y: 20}
   DungeonRooms: {fileID: 1182955003}
 --- !u!1 &1686675284
