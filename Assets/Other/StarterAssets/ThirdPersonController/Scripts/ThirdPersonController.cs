@@ -266,6 +266,8 @@ namespace StarterAssets
             {
                 targetSpeed = 0.5f;
             }
+
+            PlayFootstepAudio();
             
 
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
@@ -323,6 +325,34 @@ namespace StarterAssets
             {
                 _animator.SetBool(_animIDWalking, targetSpeed > 0.1f && !_input.sprint);
                 _animator.SetBool(_animIDRunning, _input.sprint && targetSpeed > 0.1f);
+            }
+        }
+
+        private float footstepTimer = 0.0f;
+        private float footstepInterval = 0.5f; // Adjust this based on desired footstep frequency
+
+        private void PlayFootstepAudio()
+        {
+            if (FootstepAudioClips.Length > 0 && _controller.isGrounded && _speed > 0.1f)
+            {
+                // Adjust footstep interval based on sprinting or walking
+                footstepInterval = _input.sprint ? 0.3f : 0.5f; // Faster footsteps when sprinting
+
+                footstepTimer += Time.deltaTime;
+
+                if (footstepTimer >= footstepInterval)
+                {
+                    // Randomly select a footstep sound from the array
+                    int index = UnityEngine.Random.Range(0, FootstepAudioClips.Length);
+                    AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.position, FootstepAudioVolume);
+
+                    // Reset the footstep timer
+                    footstepTimer = 0.0f;
+                }
+            }
+            else
+            {
+                footstepTimer = 0.0f; // Reset if not moving
             }
         }
 

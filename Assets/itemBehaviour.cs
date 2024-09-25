@@ -6,6 +6,7 @@ public class itemBehaviour : MonoBehaviour
 {
     public float rotateSpeed = 50f;
     public string itemName;
+    [SerializeField] public float probability = 0f;
 
     // Start is called before the first frame update
     void Start()

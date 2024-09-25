@@ -134,7 +134,7 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-        GetComponent<NavMeshSurface>().BuildNavMesh();
+        // GetComponent<NavMeshSurface>().BuildNavMesh();  // add later
     }
 
     void MazeGenerator()

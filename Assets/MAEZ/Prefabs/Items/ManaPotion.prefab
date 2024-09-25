@@ -34,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3197567167062792190, guid: 7b83e680d8aaecb42a9155045eae076a, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.10622064
+      value: 0.8117647
       objectReference: {fileID: 0}
     - target: {fileID: 3197567167062792190, guid: 7b83e680d8aaecb42a9155045eae076a, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.8117647
+      value: 0.31214717
       objectReference: {fileID: 0}
     - target: {fileID: 3197567167062792190, guid: 7b83e680d8aaecb42a9155045eae076a, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 22cc492fc345f6b4fa8c274785b53777, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff188f58422043f489060e28a5e4e0c0, type: 2}
     - target: {fileID: 919132149155446097, guid: 22cc492fc345f6b4fa8c274785b53777, type: 3}
       propertyPath: m_Name
       value: ManaPotion
@@ -319,7 +323,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0, g: 1, b: 0.12013221, a: 1}
+  m_Color: {r: 0, g: 0.21733475, b: 1, a: 1}
   m_Intensity: 2
   m_Range: 1
   m_SpotAngle: 30
