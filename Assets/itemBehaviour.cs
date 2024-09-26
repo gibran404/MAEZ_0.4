@@ -8,10 +8,16 @@ public class itemBehaviour : MonoBehaviour
     public string itemName;
     [SerializeField] public float probability = 0f;
 
+    // collider
+    public Collider triggerCollider;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //disable the trigger collider and enable it after 1 second
+        triggerCollider.enabled = false;
+        StartCoroutine(EnableCollider());
+
     }
 
     // Update is called once per frame
@@ -38,4 +44,10 @@ public class itemBehaviour : MonoBehaviour
         }
     }
 
+    //enable the trigger collider after 1 second
+    IEnumerator EnableCollider()
+    {
+        yield return new WaitForSeconds(1);
+        triggerCollider.enabled = true;
+    }
 }   

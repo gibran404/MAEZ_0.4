@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FacePlayer : MonoBehaviour
 {
-    public GameObject ObjectToFace;
+    // public GameObject ObjectToFace;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,11 @@ public class FacePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // object should face the given gameobject
-        transform.LookAt(ObjectToFace.transform);
+        // // object should face the given gameobject
+        // transform.LookAt(ObjectToFace.transform);
+
+        // // object should face the gameobject named abc
+        transform.LookAt(GameObject.Find("MainCamera").transform);
+
     }
 }

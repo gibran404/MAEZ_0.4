@@ -261,9 +261,9 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.3
   m_Height: 1.0777601
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
@@ -308,6 +308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 50
   itemName: HealthPotion
+  probability: 0.5
+  triggerCollider: {fileID: 3959762108051202265}
 --- !u!108 &-246555844776196823
 Light:
   m_ObjectHideFlags: 0
@@ -321,7 +323,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 1
+  m_Range: 1.1281554
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

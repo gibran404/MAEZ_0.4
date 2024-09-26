@@ -152,7 +152,7 @@ namespace StarterAssets
                 bool doorNearby = false;
                 foreach (Collider collider in colliders)
                 {
-                    if (collider.CompareTag("Door"))
+                    if (collider.CompareTag("Door") || collider.CompareTag("Chest"))
                     {
                     doorNearby = true;
                     break;

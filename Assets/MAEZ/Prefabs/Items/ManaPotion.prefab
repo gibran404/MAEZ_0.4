@@ -265,9 +265,9 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.3
   m_Height: 1.0777601
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
@@ -312,6 +312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 50
   itemName: ManaPotion
+  probability: 0.5
+  triggerCollider: {fileID: 1220523750181084633}
 --- !u!108 &6076759187365672565
 Light:
   m_ObjectHideFlags: 0

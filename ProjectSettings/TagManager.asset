@@ -11,6 +11,7 @@ TagManager:
   - WallCollider
   - Pillar
   - Flame
+  - Chest
   layers:
   - Default
   - TransparentFX

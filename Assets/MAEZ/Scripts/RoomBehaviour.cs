@@ -149,7 +149,7 @@ public class RoomBehaviour : MonoBehaviour
 
     public void AddClutter1()
     {
-        if (Clutter1.Length <= 2)
+        if (Clutter1.Length <= 0)
         {
             return;
         }

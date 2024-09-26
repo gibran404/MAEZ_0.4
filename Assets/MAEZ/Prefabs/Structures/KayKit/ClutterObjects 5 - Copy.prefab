@@ -42,9 +42,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8575015749410235679}
-  - component: {fileID: 1102882940332727265}
+  - component: {fileID: 3796718492719153455}
   m_Layer: 0
-  m_Name: ClutterObjects 5
+  m_Name: ClutterObjects 5 - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ Transform:
   - {fileID: 5801422911913911887}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1102882940332727265
+--- !u!114 &3796718492719153455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,14 +142,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2645260758597001406, guid: 7966cb71032ad80448d1b92fcfabb8d8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8124213674898032420}
+      addedObject: {fileID: 3756035405186422484}
   m_SourcePrefab: {fileID: 100100000, guid: 7966cb71032ad80448d1b92fcfabb8d8, type: 3}
 --- !u!1 &3724099130029136461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2645260758597001406, guid: 7966cb71032ad80448d1b92fcfabb8d8, type: 3}
   m_PrefabInstance: {fileID: 1665050692572560115}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &8124213674898032420
+--- !u!64 &3756035405186422484
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
