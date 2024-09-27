@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using RPG.Core;
-using UnityEngine;
+﻿using UnityEngine;
+using RPG.Attributes;
+using UnityEngine.Events;
 
 namespace RPG.Combat
 {
@@ -13,8 +12,11 @@ namespace RPG.Combat
         [SerializeField] float maxLifeTime = 10;
         [SerializeField] GameObject[] destroyOnHit = null;
         [SerializeField] float lifeAfterImpact = 2;
+        [SerializeField] UnityEvent onHit;
 
         Health target = null;
+        Vector3 targetPoint;
+        GameObject instigator = null;
         float damage = 0;
 
         private void Start()
@@ -24,24 +26,39 @@ namespace RPG.Combat
 
         void Update()
         {
-            if (target == null) return;
-            if (isHoming && !target.IsDead())
+            if (target != null && isHoming && !target.IsDead())
             {
                 transform.LookAt(GetAimLocation());
             }
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
-        public void SetTarget(Health target, float damage)
+        public void SetTarget(Health target, GameObject instigator, float damage)
+        {
+            SetTarget(instigator, damage, target);
+        }
+
+        public void SetTarget(Vector3 targetPoint, GameObject instigator, float damage)
+        {
+            SetTarget(instigator, damage, null, targetPoint);
+        }
+
+        public void SetTarget(GameObject instigator, float damage, Health target=null, Vector3 targetPoint=default)
         {
             this.target = target;
+            this.targetPoint = targetPoint;
             this.damage = damage;
+            this.instigator = instigator;
 
             Destroy(gameObject, maxLifeTime);
         }
 
         private Vector3 GetAimLocation()
         {
+            if (target == null)
+            {
+                return targetPoint;
+            }
             CapsuleCollider targetCapsule = target.GetComponent<CapsuleCollider>();
             if (targetCapsule == null)
             {
@@ -52,11 +69,15 @@ namespace RPG.Combat
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<Health>() != target) return;
-            if (target.IsDead()) return;
-            target.TakeDamage(damage);
+            Health health = other.GetComponent<Health>();
+            if (target != null && health != target) return;
+            if (health == null || health.IsDead()) return;
+            if (other.gameObject == instigator) return;
+            health.TakeDamage(instigator, damage);
 
             speed = 0;
+
+            onHit.Invoke();
 
             if (hitEffect != null)
             {

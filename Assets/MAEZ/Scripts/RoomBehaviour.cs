@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Unity.AI.Navigation;  // Import for NavMeshSurface
 
 public class RoomBehaviour : MonoBehaviour
 {

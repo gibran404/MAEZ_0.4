@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.AI.Navigation;
+using Unity.AI.Navigation;  // Import for NavMeshSurface
 
 public class DungeonGenerator : MonoBehaviour
 {
@@ -37,6 +37,7 @@ public class DungeonGenerator : MonoBehaviour
     public int startPos = 0;
     public Rule[] rooms;
     public Vector2 offset;
+    public NavMeshSurface navMeshSurface; // Add NavMeshSurface reference
 
     List<Cell> board;
 
@@ -58,7 +59,6 @@ public class DungeonGenerator : MonoBehaviour
         Debug.Log("PathCount: " + PathCount);
         Debug.Log("RoomCount: " + RoomCount);
         Debug.Log("Dungeon Size: " + size);
-
     }
 
     void ResetDungeon()
@@ -134,7 +134,15 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-        // GetComponent<NavMeshSurface>().BuildNavMesh();  // add later
+
+        // Now that all rooms are generated, build the NavMesh
+        BuildDungeonNavMesh();
+    }
+
+    void BuildDungeonNavMesh()
+    {
+        // This method builds the NavMesh dynamically after the dungeon is generated
+        navMeshSurface.BuildNavMesh();
     }
 
     void MazeGenerator()
