@@ -29,6 +29,18 @@ PrefabInstance:
       value: 1.64
       objectReference: {fileID: 0}
     - target: {fileID: 3197567167062792190, guid: 7b83e680d8aaecb42a9155045eae076a, type: 3}
+      propertyPath: SizeModule.y.minMaxState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197567167062792190, guid: 7b83e680d8aaecb42a9155045eae076a, type: 3}
+      propertyPath: SizeModule.z.minMaxState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197567167062792190, guid: 7b83e680d8aaecb42a9155045eae076a, type: 3}
+      propertyPath: SizeModule.curve.minMaxState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197567167062792190, guid: 7b83e680d8aaecb42a9155045eae076a, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 1.5
       objectReference: {fileID: 0}
@@ -326,7 +338,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 0.21733475, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

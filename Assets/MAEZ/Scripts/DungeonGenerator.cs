@@ -135,8 +135,14 @@ public class DungeonGenerator : MonoBehaviour
             }
         }
 
+        // add later vvv //////////////////////////////////////////////////////////////////////////////////
+
+
         // Now that all rooms are generated, build the NavMesh
-        BuildDungeonNavMesh();
+        // BuildDungeonNavMesh();
+        
+
+        // add later ^^^ //////////////////////////////////////////////////////////////////////////////////
     }
 
     void BuildDungeonNavMesh()

@@ -144,7 +144,7 @@ public class PlayerItemsandVitals : MonoBehaviour
         healthPotionText.text = healthPotionCount.ToString();
         manaPotionText.text = manaPotionCount.ToString();
 
-        vitalsText.text = "Health: " + health + "\n" + "Stamina: " + stamina + "\n" + "Mana: " + mana + "\n" + "Sanity: " + sanity + "\n" + "Health Potions: " + healthPotionCount + "\n" + "Mana Potions: " + manaPotionCount;
+        vitalsText.text = "Health: " + health + "\n" + "Stamina: " + stamina + "\n" + "Mana: " + mana + "\n" + "Sanity: " + sanity + "\n" + "Health Potions: " + healthPotionCount + "\n" + "Mana Potions: " + manaPotionCount + "\n" + "FPS: " + (1.0f / Time.deltaTime).ToString("0");
     }
 
     public void ReduceHealthBig()
