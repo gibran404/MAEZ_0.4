@@ -6,6 +6,7 @@ public class ChestBehaviour : MonoBehaviour
 {
     private bool playerInRange;
     public GameObject E_Label;
+    public GameObject Particles;
 
     // Update is called once per frame
     void Update()
@@ -14,6 +15,7 @@ public class ChestBehaviour : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             Destroy(E_Label);
+            Destroy(Particles);
 
             GetComponent<Animator>().SetBool("Open", true);
             GetComponent<ItemSpawner>().spawnItems();

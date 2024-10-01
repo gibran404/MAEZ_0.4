@@ -2500,10 +2500,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6929377696135717419}
     m_Modifications:
-    - target: {fileID: 1430564922320215897, guid: 8235fbcbf316af94ab4e5c8d2593e86f, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2363406523399942806, guid: 8235fbcbf316af94ab4e5c8d2593e86f, type: 3}
       propertyPath: m_Name
       value: floor_tile_large (20)
@@ -4932,10 +4928,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6929377696135717419}
     m_Modifications:
-    - target: {fileID: 1430564922320215897, guid: 8235fbcbf316af94ab4e5c8d2593e86f, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2363406523399942806, guid: 8235fbcbf316af94ab4e5c8d2593e86f, type: 3}
       propertyPath: m_Name
       value: floor_tile_large (21)
