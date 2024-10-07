@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - CinemachineTarget
-  - Structure
-  - Door
-  - Floor
-  - WallCollider
-  - Pillar
-  - Flame
-  - Chest
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -21,19 +13,19 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - PlayerAttackRadius
+  - Enemy
+  - EnemyAttackRadius
+  - EnemyBullets
+  - PlayerComboAttackRadius
+  - AirEnemy
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - post
   - 
   - 
   - 
@@ -46,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: CriticalText
+    uniqueID: 128319441
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: NormalDamage
+    uniqueID: 2357185643
     locked: 0
