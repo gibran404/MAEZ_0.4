@@ -21,6 +21,7 @@ namespace StarterAssets
         public float SprintSpeed = 5.335f;
         public bool SprintFlag = false;
         public static bool Blocked = false;
+        public static bool Attacking = false;
 
         [Tooltip("How fast the character turns to face movement direction")]
         [Range(0.0f, 0.3f)]
@@ -145,32 +146,24 @@ namespace StarterAssets
 
         private void OtherChecks()
         {
-            // for interacting with doors
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Collider[] colliders = Physics.OverlapSphere(transform.position, 2f);
-                bool doorNearby = false;
-                foreach (Collider collider in colliders)
-                {
-                    if (collider.CompareTag("Door") || collider.CompareTag("Chest"))
-                    {
-                    doorNearby = true;
-                    break;
-                    }
-                }
+            //Attack
 
-                if (doorNearby)
-                {
-                    _animator.SetBool("Interacting", true);
-                }
-            }
-            else
+            // if left mouse button held down
+            if (Mouse.current.leftButton.isPressed)
             {
-                _animator.SetBool("Interacting", false);
+                Attacking = true;
+                _animator.SetBool("Attacking", true);
+            }
+            else if (!Mouse.current.leftButton.isPressed && _animator.GetBool("Attacking") == true)
+            {
+                Attacking = false;
+                _animator.SetBool("Attacking", false);
             }
 
-            // if rightclick pressed, player will block
-            if (Input.GetMouseButtonDown(1))
+
+
+            //Block
+            if (Input.GetMouseButtonDown(1) && !Attacking)
             {
                 Blocked = true;
                 // _animator.SetBool("Blocking", true);
@@ -182,6 +175,33 @@ namespace StarterAssets
                 _animator.SetBool("Blocked", false);
             }
 
+
+
+            //Interacting
+            if (Input.GetKeyDown(KeyCode.E) && !Attacking && !Blocked)
+            {
+                Collider[] colliders = Physics.OverlapSphere(transform.position, 2f);
+                bool doorNearby = false;
+                foreach (Collider collider in colliders)
+                {
+                    if (collider.CompareTag("Door") || collider.CompareTag("Chest"))
+                    {
+                        doorNearby = true;
+                        break;
+                    }
+                }
+                if (doorNearby)
+                {
+                    _animator.SetBool("Interacting", true);
+                }
+            }
+            else
+            {
+                _animator.SetBool("Interacting", false);
+            }
+
+
+            
         }
 
 
@@ -235,7 +255,7 @@ namespace StarterAssets
             float Gravity = -30f;
             float targetSpeed ; //= _input.sprint ? SprintSpeed : MoveSpeed;
 
-            if (_input.sprint && !Blocked)
+            if (_input.sprint && !Blocked && !Attacking)
             {
                 if (PlayerItemsandVitals.stamina > 1 && SprintFlag)
                 {
@@ -251,7 +271,7 @@ namespace StarterAssets
                     PlayerManager.GetComponent<PlayerItemsandVitals>().regenStamina();
                 }
             }
-            else if (!Blocked)
+            else if (!Blocked && !Attacking)
             {
                 if (PlayerItemsandVitals.stamina > 5)
                 {

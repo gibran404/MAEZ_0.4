@@ -12,6 +12,7 @@ TagManager:
   - Pillar
   - Flame
   - Chest
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - floor
+  - not floor
+  - Door
   - 
   - 
   - 

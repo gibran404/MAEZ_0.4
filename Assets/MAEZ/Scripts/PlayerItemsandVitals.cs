@@ -39,6 +39,7 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     // mana reduction var for light orb
     private float manaReductionTimer = 0f;
+    // private float lastHitTime = 0f;
 
 
     // Start is called before the first frame update
@@ -47,6 +48,8 @@ public class PlayerItemsandVitals : MonoBehaviour
         manaBar.GetComponent<VitalBar>().setVital(mana);
         healthBar.GetComponent<VitalBar>().setVital(health);
         stamBar.GetComponent<VitalBar>().setVital(stamina);
+
+        // lastHitTime = Time.time;
 
         // health = 100;
         // stamina = 100;
@@ -64,12 +67,13 @@ public class PlayerItemsandVitals : MonoBehaviour
     void Update()
     {
         updateVitals();
-        if (health <= 0)
+        if (health <= 0 && isplayerAlive)
         {
             Debug.Log("player died");
 
             isplayerAlive = false;
             GetComponent<playerDied>().enabled = true;
+            Player.GetComponent<Animator>().SetBool("Dead", true);
             // Player.GetComponent<ThirdPersonController>().enabled = false;
             torch.SetActive(false);
             mana = 0;
@@ -149,22 +153,35 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     public void ReduceHealthBig()
     {
+        // if (Time.time - lastHitTime < 1f)
+        // {
+        //     return;
+        // }
+
         health -= 30;
         healthBar.GetComponent<VitalBar>().vitalDeduct(30);
         if (health < 0)
         {
             health = 0;
         }
+        // lastHitTime = Time.time;
     }
 
     public void ReduceHealthSmall()
     {
+        // if (Time.time - lastHitTime < 1f)
+        // {
+        //     return;
+        // }
+
         health -= 15;
         healthBar.GetComponent<VitalBar>().vitalDeduct(15);
         if (health < 0)
         {
             health = 0;
         }
+        // lastHitTime = Time.time;
+
     }
 
     public void RegenHealth()

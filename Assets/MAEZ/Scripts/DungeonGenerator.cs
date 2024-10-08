@@ -37,7 +37,6 @@ public class DungeonGenerator : MonoBehaviour
     public int startPos = 0;
     public Rule[] rooms;
     public Vector2 offset;
-    public NavMeshSurface navMeshSurface; // Add NavMeshSurface reference
 
     List<Cell> board;
 
@@ -55,6 +54,11 @@ public class DungeonGenerator : MonoBehaviour
         RoomCount = 0;
 
         MazeGenerator();
+
+        // find Starter_floor gameObject and enable its buildnavmesh script
+        GameObject EnderFloor = GameObject.Find("Ender_floor");
+        EnderFloor.GetComponent<NavMeshBaker>().enabled = true;
+        
 
         Debug.Log("PathCount: " + PathCount);
         Debug.Log("RoomCount: " + RoomCount);
@@ -145,11 +149,6 @@ public class DungeonGenerator : MonoBehaviour
         // add later ^^^ //////////////////////////////////////////////////////////////////////////////////
     }
 
-    void BuildDungeonNavMesh()
-    {
-        // This method builds the NavMesh dynamically after the dungeon is generated
-        navMeshSurface.BuildNavMesh();
-    }
 
     void MazeGenerator()
     {

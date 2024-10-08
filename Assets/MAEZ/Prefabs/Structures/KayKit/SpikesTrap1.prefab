@@ -460,5 +460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a25e1104945b94888b82d1d0d943cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemOwner: Enemy
+  itemOwner: Trap
+  ownerobject: {fileID: 2416660051377538989}
   DamageAmount: Small

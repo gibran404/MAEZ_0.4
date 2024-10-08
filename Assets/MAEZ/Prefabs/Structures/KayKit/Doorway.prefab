@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7307933878387895350}
   - component: {fileID: 6047503549190566677}
   - component: {fileID: 7623367679311371856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: E_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 3604478559887659813}
   - component: {fileID: 7864580894655514970}
   - component: {fileID: 6534709055915902856}
-  m_Layer: 20
+  m_Layer: 8
   m_Name: E_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 669749679018940172}
   - component: {fileID: 659942246365837858}
-  m_Layer: 20
+  m_Layer: 8
   m_Name: E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8431405779903866858}
   - component: {fileID: 7332809928113808755}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: FrontCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 1593250641580781385}
   - component: {fileID: 177905272456908105}
   - component: {fileID: 7851470965968421454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: E_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 3363906846898393837}
   - component: {fileID: 274242401957339519}
   - component: {fileID: 2241954041891930203}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Door Wooden Round Left (1)
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -858,7 +858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4810466810344768886}
   - component: {fileID: 4696784372487767618}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: BackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2900516009562912218}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: E_Label (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2136416613086355116}
   - component: {fileID: 1628396286878211747}
-  m_Layer: 20
+  m_Layer: 8
   m_Name: E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1029,7 +1029,7 @@ GameObject:
   - component: {fileID: 7145346528180171458}
   - component: {fileID: 2350183108112332722}
   - component: {fileID: 7880831913106149461}
-  m_Layer: 20
+  m_Layer: 8
   m_Name: E_BG (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

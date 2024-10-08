@@ -17,6 +17,7 @@ public class playerDied : MonoBehaviour
         VitalBars.SetActive(false);
         Hotbar.SetActive(false);
         Player.GetComponent<Animator>().SetBool("Dead", true);
+        GetComponent<PlayerItemsandVitals>().enabled = false;
 
         StartCoroutine(ShowPlayerDiedUI());
     }
@@ -24,7 +25,11 @@ public class playerDied : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Player.GetComponent<Animator>().SetBool("Dead", false);
+        // if animator is on DeathB state
+        // if (Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Death_B"))
+        // {
+        //     Player.GetComponent<Animator>().SetBool("Dead", false);
+        // }
     }
 
     IEnumerator ShowPlayerDiedUI()
