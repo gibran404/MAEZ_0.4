@@ -80,7 +80,23 @@ public class dealDamage : MonoBehaviour
         }
         else if (itemOwner == "Trap")
         {
-            FindObjectOfType<PlayerItemsandVitals>().ReduceHealthSmall();
+            if (other.tag == "Player")
+            {
+                FindObjectOfType<PlayerItemsandVitals>().ReduceHealthSmall();
+            }
+            else if (other.tag == "Enemy")
+            {
+                if (other.GetComponent<EnemyVitals>().isEnemyAlive)
+                {
+                    other.GetComponent<EnemyVitals>().ReduceHealth();
+                    Debug.Log("Enemy health reduced");
+                    // LastDamageTime = Time.time;
+                }
+                else
+                {
+                    Debug.Log("Enemy is already dead");
+                }
+            }
         }
     }
 }

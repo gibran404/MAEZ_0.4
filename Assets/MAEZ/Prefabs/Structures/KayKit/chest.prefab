@@ -648,6 +648,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 8290940317974935616, guid: f0c78ecd980b4b24890064a88bc71edc, type: 3}
+  - {fileID: 8290940317974935616, guid: f0c78ecd980b4b24890064a88bc71edc, type: 3}
+  - {fileID: 7083972500286456071, guid: f4a18dbdf9c92094ab8a54621f17d029, type: 3}
   - {fileID: 7083972500286456071, guid: f4a18dbdf9c92094ab8a54621f17d029, type: 3}
 --- !u!114 &3418093082135136984
 MonoBehaviour:

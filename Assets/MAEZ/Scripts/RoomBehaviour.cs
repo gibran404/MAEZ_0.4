@@ -158,7 +158,7 @@ public class RoomBehaviour : MonoBehaviour
         {
             for (int i = 0; i < Clutter1.Length; i++)
             {
-                if (Random.Range(0, 100) < 50)
+                if (Random.Range(0, 100) < 50) //50% chance
                 {
                     Clutter1[i].SetActive(true);
                 }
