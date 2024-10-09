@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/MAEZ/Scenes/Intro.unity
+    guid: 134fcd6810096464287fa6af32c23ba9
+  - enabled: 1
     path: Assets/MAEZ/Scenes/MAEZ.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:

@@ -27607,6 +27607,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1491250907338564907, guid: a5bf8cb560420bd42b77a57ef5195765, type: 3}
+      propertyPath: walls.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491250907338564907, guid: a5bf8cb560420bd42b77a57ef5195765, type: 3}
+      propertyPath: walls.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491250907338564907, guid: a5bf8cb560420bd42b77a57ef5195765, type: 3}
+      propertyPath: walls.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491250907338564907, guid: a5bf8cb560420bd42b77a57ef5195765, type: 3}
+      propertyPath: walls.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491250907338564907, guid: a5bf8cb560420bd42b77a57ef5195765, type: 3}
+      propertyPath: walls.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491250907338564907, guid: a5bf8cb560420bd42b77a57ef5195765, type: 3}
+      propertyPath: walls.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4721346263351735989, guid: a5bf8cb560420bd42b77a57ef5195765, type: 3}
       propertyPath: m_Name
       value: ClutterObjects2 (3)
@@ -27623,7 +27647,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3.46
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1491250907338564907, guid: a5bf8cb560420bd42b77a57ef5195765, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2590099000686722750, guid: a5bf8cb560420bd42b77a57ef5195765, type: 3}
     - {fileID: 8951599590770969320, guid: a5bf8cb560420bd42b77a57ef5195765, type: 3}
