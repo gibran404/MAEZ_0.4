@@ -10,6 +10,7 @@ public class NavMeshBaker : MonoBehaviour
     // This will be called when the game starts
     void Start()
     {
+
         //after 1 second, bake the navmesh
         navMeshSurface.RemoveData();
         StartCoroutine(BakeNavMeshAfterDelay());

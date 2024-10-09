@@ -24,6 +24,7 @@ public class EnemyFollow : MonoBehaviour
     {
         if (GetComponent<EnemyVitals>().isEnemyAlive == false)
         {
+            transform.LookAt(player);
             return;
         }   
 

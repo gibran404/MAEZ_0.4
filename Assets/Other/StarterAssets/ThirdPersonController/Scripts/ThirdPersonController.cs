@@ -140,8 +140,9 @@ namespace StarterAssets
             _hasAnimator = TryGetComponent(out _animator);
 
             GroundedCheck();
-            OtherChecks();
             Move();
+            OtherChecks();
+
         }
 
         private void OtherChecks()
@@ -151,6 +152,11 @@ namespace StarterAssets
             // if left mouse button held down
             if (Mouse.current.leftButton.isPressed)
             {
+                // face 90 degrees to the right of the direction cinemachine camera is facing
+                float targetAngle = CinemachineCameraTarget.transform.rotation.eulerAngles.y + 90.0f;
+                float smoothedAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.y, targetAngle, Time.deltaTime * 4);
+                transform.rotation = Quaternion.Euler(0.0f, smoothedAngle, 0.0f);
+
                 Attacking = true;
                 _animator.SetBool("Attacking", true);
             }
@@ -163,18 +169,20 @@ namespace StarterAssets
 
 
             //Block
-            if (Input.GetMouseButtonDown(1) && !Attacking)
+            if (Mouse.current.rightButton.isPressed && !Attacking)
             {
+                float targetAngle = CinemachineCameraTarget.transform.rotation.eulerAngles.y + 90.0f;
+                float smoothedAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.y, targetAngle, Time.deltaTime * 4);
+                transform.rotation = Quaternion.Euler(0.0f, smoothedAngle, 0.0f);
+
                 Blocked = true;
-                // _animator.SetBool("Blocking", true);
                 _animator.SetBool("Blocked", true);
             }
-            else if (Input.GetMouseButtonUp(1))
+            else if (!Mouse.current.rightButton.isPressed && _animator.GetBool("Blocked") == true)
             {
                 Blocked = false;
                 _animator.SetBool("Blocked", false);
             }
-
 
 
             //Interacting

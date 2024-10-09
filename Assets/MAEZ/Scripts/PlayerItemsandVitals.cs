@@ -107,14 +107,14 @@ public class PlayerItemsandVitals : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            if (healthPotionCount > 0)
+            if (healthPotionCount > 0 && health < 100)
             {
                 RegenHealth();
                 healthPotionCount--;
                 healthPotionText.text = healthPotionCount.ToString();
             }
         }
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) && mana < 100)
         {
             if(manaPotionCount > 0)
             {   
