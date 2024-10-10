@@ -10,14 +10,18 @@ public class EnemyVitals : MonoBehaviour
     public GameObject weaponScript;
 
     public GameObject eyes;
-    // private float lastHitTime = 0f;
+
+    // audio clip to play when takes damage
+    public AudioClip HitSound;
+
+    private float lastHitTime = 0f;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        // lastHitTime = Time.time;
+        lastHitTime = Time.time;
 
         // health = 100;
         // stamina = 100;
@@ -45,6 +49,8 @@ public class EnemyVitals : MonoBehaviour
             GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<CapsuleCollider>().enabled = false;
 
+            GetComponent<AudioSource>().Stop();
+
 
             health = 0;
 
@@ -54,10 +60,15 @@ public class EnemyVitals : MonoBehaviour
 
     public void ReduceHealth()
     {
-        // if (Time.time - lastHitTime < 1f)
-        // {
-        //     return;
-        // }
+        if (Time.time - lastHitTime < 1f)
+        {
+            return;
+        }
+
+        // play hit sound
+        AudioSource.PlayClipAtPoint(HitSound, transform.position);
+
+
         Debug.Log("Reducing Enemy Health");
         health -= 30;
         if (health < 0)
@@ -65,7 +76,7 @@ public class EnemyVitals : MonoBehaviour
             health = 0;
         }
         Debug.Log("now Enemy Health: " + health);
-        // lastHitTime = Time.time;
+        lastHitTime = Time.time;
 
     }
 }

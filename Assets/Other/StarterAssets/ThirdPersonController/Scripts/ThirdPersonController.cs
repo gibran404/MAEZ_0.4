@@ -361,8 +361,11 @@ namespace StarterAssets
 
         private void PlayFootstepAudio()
         {
-            if (FootstepAudioClips.Length > 0 && _controller.isGrounded && _speed > 0.1f)
+
+            // if (FootstepAudioClips.Length > 0 && _controller.isGrounded && _speed > 0.1f)
+            if (FootstepAudioClips.Length > 0 && _speed > 0.1f) 
             {
+
                 // Adjust footstep interval based on sprinting or walking
                 footstepInterval = _input.sprint ? 0.3f : 0.5f; // Faster footsteps when sprinting
 
@@ -370,6 +373,7 @@ namespace StarterAssets
 
                 if (footstepTimer >= footstepInterval)
                 {
+
                     // Randomly select a footstep sound from the array
                     int index = UnityEngine.Random.Range(0, FootstepAudioClips.Length);
                     AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.position, FootstepAudioVolume);

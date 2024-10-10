@@ -11,6 +11,8 @@ public class EnemyFollow : MonoBehaviour
 
     public bool Aggro = false;
     public bool canAttack = false;
+
+    public bool soundPlaying;
     
 
     void Start()
@@ -30,6 +32,11 @@ public class EnemyFollow : MonoBehaviour
 
         if (Aggro)
         {
+            if (!soundPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+                soundPlaying = true;
+            }
             enemy.SetDestination(player.position);
             transform.LookAt(player);
         }
@@ -40,6 +47,13 @@ public class EnemyFollow : MonoBehaviour
                 animator.SetBool("Attacking", false);
                 animator.SetBool("Running", false);
             }
+
+            if (soundPlaying)
+            {
+                soundPlaying = false;
+                GetComponent<AudioSource>().Stop();
+            }
+
             return;
         }
         

@@ -11,6 +11,9 @@ public class dealDamage : MonoBehaviour
     public GameObject ownerobject;
     private float LastDamageTime;
 
+    public AudioClip HitSound;
+    public AudioClip BlockSound;
+
     public string DamageAmount;
     // Start is called before the first frame update
     void Start()
@@ -64,15 +67,22 @@ public class dealDamage : MonoBehaviour
                     if (!ThirdPersonController.Blocked)
                     {
                         FindObjectOfType<PlayerItemsandVitals>().ReduceHealthSmall();
+                        AudioSource.PlayClipAtPoint(HitSound, transform.position);
+                    }
+                    else
+                    {
+                        AudioSource.PlayClipAtPoint(BlockSound, transform.position);
                     }
                 }
                 else if (ThirdPersonController.Blocked)
                 {
                     FindObjectOfType<PlayerItemsandVitals>().ReduceHealthSmall();
+                    AudioSource.PlayClipAtPoint(HitSound, transform.position);
                 }
                 else
                 {
                     FindObjectOfType<PlayerItemsandVitals>().ReduceHealthBig();
+                    AudioSource.PlayClipAtPoint(HitSound, transform.position);
                 }
                 Debug.Log("Player health reduced from "+ itemOwner);
                 LastDamageTime = Time.time;
@@ -83,6 +93,8 @@ public class dealDamage : MonoBehaviour
             if (other.tag == "Player")
             {
                 FindObjectOfType<PlayerItemsandVitals>().ReduceHealthSmall();
+                // AudioSource.PlayClipAtPoint(HitSound, transform.position);
+
             }
             else if (other.tag == "Enemy")
             {
