@@ -8,12 +8,16 @@ public class ChestBehaviour : MonoBehaviour
     public GameObject E_Label;
     public GameObject Particles;
 
+    public AudioClip openSound;
+
     // Update is called once per frame
     void Update()
     {
         //when player is in range and presses E, destroy the chest and spawn the items
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
+            AudioSource.PlayClipAtPoint(openSound, transform.position);
+
             Destroy(E_Label);
             Destroy(Particles);
 

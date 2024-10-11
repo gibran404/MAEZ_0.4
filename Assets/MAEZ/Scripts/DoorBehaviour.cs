@@ -14,6 +14,8 @@ public class DoorBehaviour : MonoBehaviour
     [SerializeField] private bool isOpenedBack = false;
     [SerializeField] private bool isClosed = true;
 
+    public AudioClip doorSound;
+
     [SerializeField] private GameObject E_Label;
     [SerializeField] private float debounceTime = 0.5f; // time in seconds to ignore subsequent presses
     private bool canToggleDoor = true;
@@ -46,11 +48,15 @@ public class DoorBehaviour : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E) && canToggleDoor)
             {
+
+                AudioSource.PlayClipAtPoint(doorSound, transform.position);
+
                 // initiate the Interacting animation for the player without the playercontroller
                 // other.GetComponent<Animator>().SetBool("Interacting", true);
 
                 StartCoroutine(DebounceToggle());
                 // Debug.Log("E is pressed");
+
                 if (isOpenedFront)
                 {
                     DoorAnimator.Play("DoorCloseFront", 0, 0.0f);

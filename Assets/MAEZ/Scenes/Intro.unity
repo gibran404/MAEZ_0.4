@@ -2078,8 +2078,6 @@ MonoBehaviour:
   vitalsText: {fileID: 0}
   healthPotionText: {fileID: 0}
   manaPotionText: {fileID: 0}
-  swordUI: {fileID: 0}
-  torchUI: {fileID: 0}
   sword: {fileID: 1449306475}
   torch: {fileID: 9101000308136338489}
 --- !u!4 &531603768
@@ -4869,6 +4867,7 @@ GameObject:
   - component: {fileID: 1584479942}
   - component: {fileID: 1584479941}
   - component: {fileID: 1584479940}
+  - component: {fileID: 1584479943}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4926,6 +4925,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1584479943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584479939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfb924c053ed2f4e95db487cfd908b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 3027417882356470643}
+  player: {fileID: 1467615315}
 --- !u!4 &1593830239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1602635210542638953, guid: 3be8b0371587eb24993edd8698fd3184, type: 3}
@@ -28662,6 +28675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemOwner: Player
   ownerobject: {fileID: 1467615315}
+  HitSound: {fileID: 0}
+  BlockSound: {fileID: 0}
   DamageAmount: Big
 --- !u!1001 &8801504258316138867
 PrefabInstance:

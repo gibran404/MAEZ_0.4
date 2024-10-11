@@ -18,6 +18,15 @@ public class EnemyAggroCheck : MonoBehaviour
             StopAllCoroutines();
         }
     }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            GetComponentInParent<EnemyFollow>().Aggro = true;
+            playerInRange = true;
+            StopAllCoroutines();
+        }
+    }
 
     void OnTriggerExit(Collider other)
     {
@@ -33,6 +42,7 @@ public class EnemyAggroCheck : MonoBehaviour
         {
             StartCoroutine(DisableAggro());
         }
+        
 
         // if player is dead, disable aggro
         if (PlayerItemsandVitals.health <= 0)

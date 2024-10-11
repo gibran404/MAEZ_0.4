@@ -1,0 +1,1262 @@
+fileFormatVersion: 2
+guid: 6b8b635de0c6d984dbf2662aac791826
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_0
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 1025
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b4e4d05ba651b742932dc11e0617369
+      internalID: 298541353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_1
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1029
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ac69e200df5114aa95cec9a005a969
+      internalID: -22807841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_2
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 1028
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22774e5345daa8142ba9e77113f3f5a2
+      internalID: -324897691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_3
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 945
+        width: 64
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb45752337f7a84bb921b4b228c0ab7
+      internalID: 1856503136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_4
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 946
+        width: 63
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ddb74543ac67948bf8d223781d298a
+      internalID: 1679023331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_5
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 950
+        width: 63
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69a7011544cf344da6cbb18faf53ce0
+      internalID: 702098311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_6
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 950
+        width: 63
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8042ad1b912a441875a2e6f1078493
+      internalID: 1198213455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_7
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 928
+        width: 64
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f86164e9487c49c438273cc1aff16036
+      internalID: -1303294910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_8
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 932
+        width: 96
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e36c59a0c35174fb9cafde08422222
+      internalID: 1139470048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_9
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 931
+        width: 66
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa812d902ae0234194fbe1a26e05a14
+      internalID: -1416062289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_10
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 1017
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95247d75968d4ad4791e9f3b01615a5f
+      internalID: -1821474689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_11
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 923
+        width: 68
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c541eb569f3fae049aaae1af8a8e322c
+      internalID: -1536908112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_12
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 938
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173b68defff8fd641ae9c58725d666e2
+      internalID: 911400173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_13
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 930
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78aef0cd3edafe045a31d8246ea4217a
+      internalID: 1700606655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_14
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 934
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eae8ecb8e569984aa3d6bef9a7f6c45
+      internalID: 1875336435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_15
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 937
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9108c7138063f7f42a7b904d2578edc1
+      internalID: 2036654365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_16
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 926
+        width: 37
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284a1ae1649f75248b78b093ba9a3f47
+      internalID: 2042548783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_17
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 764
+        width: 74
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44989601ceba32346a059fbb0fa82c2c
+      internalID: 2132623478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_18
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 849
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759a00eca85babf4fbfdcaaa2b7fe4bf
+      internalID: -1727157480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_19
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 768
+        width: 74
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 778eb8c04d81f1447bb5c0567d5ae6cd
+      internalID: -367225789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_20
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 849
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544b5152ecb71ce41aa916ae7c80105a
+      internalID: -1956731139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_21
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 768
+        width: 74
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d721400e5054bcd4e9c5a4e768e49466
+      internalID: 1358696844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_22
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 852
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b6bdd66c054014fa8fe522048982e7
+      internalID: 847314254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_23
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 771
+        width: 74
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02bdfdafd6fd3ea468758ffb3a13f885
+      internalID: 909387392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_24
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 761
+        width: 88
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e018faf1cf4c3409053a066aefb34a
+      internalID: -1609641376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_25
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 751
+        width: 88
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a349390597e27c46b81a6c9f46440f2
+      internalID: 947943897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_26
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 845
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047b3e83b2d5cc249bf728a7fff25a43
+      internalID: -1030519903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_27
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 767
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b208863ff39c384eba309ee8c126e3f
+      internalID: -1401333964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_28
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 771
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db782910c6dff11458cc4729da55346b
+      internalID: -2046590519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_29
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 771
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e703ee743dcd14895f9a68568b4682
+      internalID: 697537477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_30
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 523
+        width: 143
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8b64418925fc4448db6b5e2b91db51
+      internalID: -2041825338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_31
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 515
+        width: 143
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd86d9012954994c9656d619cb0a152
+      internalID: -451955674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_32
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 515
+        width: 142
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fe44a173cfad04ea85126465df6d4e
+      internalID: 1195841277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_33
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 515
+        width: 143
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd40bb8037897b47bd5e23e8ce4c88b
+      internalID: -167825140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_34
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 518
+        width: 142
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514583baad330954bb4f21143cbbbdec
+      internalID: -1888349529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_35
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 521
+        width: 143
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f60bfcbfc09554e9a82f2ac92f5ca7
+      internalID: -1988113796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_36
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 282
+        width: 165
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1186187da4cc5419839d905151cf5f
+      internalID: 1204368068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_37
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 278
+        width: 165
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feedf6542f9abfa4f880df8310c0fbba
+      internalID: -1500329493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_38
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 281
+        width: 165
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edef8d2731ef28644b173afa425ab8c1
+      internalID: -1327922299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_39
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 277
+        width: 165
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ecc2146470ad84a9fb017f54bbad43
+      internalID: 2134753806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_40
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 283
+        width: 165
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e03710688f8feb45bc0b664fd60f5ac
+      internalID: 129390784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_41
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 284
+        width: 165
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e9cea4ffa792a244bdf7cbf619b4197
+      internalID: 2016916279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_42
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 283
+        width: 165
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2808375c3f68b4abfecabc26227f90
+      internalID: -2030101031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_43
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 279
+        width: 165
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a29a3366e336c40aa81164afc13250
+      internalID: -1109189810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_44
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 51
+        width: 165
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08441ba27b716864688dfd719d59f4ac
+      internalID: -100671952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_45
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 39
+        width: 165
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f1001941d3d5c42bbca39a5f4dc7bc
+      internalID: -2111247936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_46
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 46
+        width: 165
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3717cfd693dc10642b531e3b02333bcc
+      internalID: 351856628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_47
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 44
+        width: 165
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65df6644ec9ba9f4c96ee7759981354b
+      internalID: 1118343365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_48
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 42
+        width: 165
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b5465c87afc51c40a1ecddd801fea7b
+      internalID: 594272942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_49
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 36
+        width: 165
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1290a82cc4fdd9340a95835a51e09e85
+      internalID: 1622727676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steampunk_UI_inventory_cursor_icons 223_50
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 31
+        width: 165
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932bd3171d2169d429bebf1d7205c2d3
+      internalID: -384891367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Steampunk_UI_inventory_cursor_icons 223_0: 298541353
+      Steampunk_UI_inventory_cursor_icons 223_1: -22807841
+      Steampunk_UI_inventory_cursor_icons 223_10: -1821474689
+      Steampunk_UI_inventory_cursor_icons 223_11: -1536908112
+      Steampunk_UI_inventory_cursor_icons 223_12: 911400173
+      Steampunk_UI_inventory_cursor_icons 223_13: 1700606655
+      Steampunk_UI_inventory_cursor_icons 223_14: 1875336435
+      Steampunk_UI_inventory_cursor_icons 223_15: 2036654365
+      Steampunk_UI_inventory_cursor_icons 223_16: 2042548783
+      Steampunk_UI_inventory_cursor_icons 223_17: 2132623478
+      Steampunk_UI_inventory_cursor_icons 223_18: -1727157480
+      Steampunk_UI_inventory_cursor_icons 223_19: -367225789
+      Steampunk_UI_inventory_cursor_icons 223_2: -324897691
+      Steampunk_UI_inventory_cursor_icons 223_20: -1956731139
+      Steampunk_UI_inventory_cursor_icons 223_21: 1358696844
+      Steampunk_UI_inventory_cursor_icons 223_22: 847314254
+      Steampunk_UI_inventory_cursor_icons 223_23: 909387392
+      Steampunk_UI_inventory_cursor_icons 223_24: -1609641376
+      Steampunk_UI_inventory_cursor_icons 223_25: 947943897
+      Steampunk_UI_inventory_cursor_icons 223_26: -1030519903
+      Steampunk_UI_inventory_cursor_icons 223_27: -1401333964
+      Steampunk_UI_inventory_cursor_icons 223_28: -2046590519
+      Steampunk_UI_inventory_cursor_icons 223_29: 697537477
+      Steampunk_UI_inventory_cursor_icons 223_3: 1856503136
+      Steampunk_UI_inventory_cursor_icons 223_30: -2041825338
+      Steampunk_UI_inventory_cursor_icons 223_31: -451955674
+      Steampunk_UI_inventory_cursor_icons 223_32: 1195841277
+      Steampunk_UI_inventory_cursor_icons 223_33: -167825140
+      Steampunk_UI_inventory_cursor_icons 223_34: -1888349529
+      Steampunk_UI_inventory_cursor_icons 223_35: -1988113796
+      Steampunk_UI_inventory_cursor_icons 223_36: 1204368068
+      Steampunk_UI_inventory_cursor_icons 223_37: -1500329493
+      Steampunk_UI_inventory_cursor_icons 223_38: -1327922299
+      Steampunk_UI_inventory_cursor_icons 223_39: 2134753806
+      Steampunk_UI_inventory_cursor_icons 223_4: 1679023331
+      Steampunk_UI_inventory_cursor_icons 223_40: 129390784
+      Steampunk_UI_inventory_cursor_icons 223_41: 2016916279
+      Steampunk_UI_inventory_cursor_icons 223_42: -2030101031
+      Steampunk_UI_inventory_cursor_icons 223_43: -1109189810
+      Steampunk_UI_inventory_cursor_icons 223_44: -100671952
+      Steampunk_UI_inventory_cursor_icons 223_45: -2111247936
+      Steampunk_UI_inventory_cursor_icons 223_46: 351856628
+      Steampunk_UI_inventory_cursor_icons 223_47: 1118343365
+      Steampunk_UI_inventory_cursor_icons 223_48: 594272942
+      Steampunk_UI_inventory_cursor_icons 223_49: 1622727676
+      Steampunk_UI_inventory_cursor_icons 223_5: 702098311
+      Steampunk_UI_inventory_cursor_icons 223_50: -384891367
+      Steampunk_UI_inventory_cursor_icons 223_6: 1198213455
+      Steampunk_UI_inventory_cursor_icons 223_7: -1303294910
+      Steampunk_UI_inventory_cursor_icons 223_8: 1139470048
+      Steampunk_UI_inventory_cursor_icons 223_9: -1416062289
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

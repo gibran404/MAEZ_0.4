@@ -57,6 +57,8 @@ public class MainMenu : MonoBehaviour
 
     public void LoadIntro()
     {
+        // time scale to 1
+        Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Intro");
     }
     

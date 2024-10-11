@@ -28,10 +28,6 @@ public class PlayerItemsandVitals : MonoBehaviour
     public Text healthPotionText;
     public Text manaPotionText;
 
-    // for now, remove later
-    public GameObject swordUI;
-    public GameObject torchUI;
-
     public GameObject sword;
     public GameObject torch;
     // for now remove later
@@ -134,6 +130,8 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     void FlipTorch()
     {
+        
+
         if (torch.activeSelf)
         {
             torch.SetActive(false);

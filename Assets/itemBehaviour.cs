@@ -8,6 +8,8 @@ public class itemBehaviour : MonoBehaviour
     public string itemName;
     [SerializeField] public float probability = 0f;
 
+    public AudioClip pickupSound;
+
     // collider
     public Collider triggerCollider;
 
@@ -32,6 +34,10 @@ public class itemBehaviour : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            // play the audio source
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+
+            
             if (itemName == "HealthPotion")
             {
                 PlayerItemsandVitals.healthPotionCount++;

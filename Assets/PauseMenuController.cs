@@ -20,7 +20,7 @@ public class PauseMenuController : MonoBehaviour
     void Update()
     {
         // Check for ESC key press
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
             {

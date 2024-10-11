@@ -171,9 +171,9 @@ namespace StarterAssets
             //Block
             if (Mouse.current.rightButton.isPressed && !Attacking)
             {
-                float targetAngle = CinemachineCameraTarget.transform.rotation.eulerAngles.y + 90.0f;
-                float smoothedAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.y, targetAngle, Time.deltaTime * 4);
-                transform.rotation = Quaternion.Euler(0.0f, smoothedAngle, 0.0f);
+                // float targetAngle = CinemachineCameraTarget.transform.rotation.eulerAngles.y + 90.0f;
+                // float smoothedAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.y, targetAngle, Time.deltaTime * 4);
+                // transform.rotation = Quaternion.Euler(0.0f, smoothedAngle, 0.0f);
 
                 Blocked = true;
                 _animator.SetBool("Blocked", true);

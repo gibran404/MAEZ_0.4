@@ -93,6 +93,8 @@ public class dealDamage : MonoBehaviour
             if (other.tag == "Player")
             {
                 FindObjectOfType<PlayerItemsandVitals>().ReduceHealthSmall();
+                FindObjectOfType<PlayerItemsandVitals>().ReduceHealthSmall();
+                
                 // AudioSource.PlayClipAtPoint(HitSound, transform.position);
 
             }
@@ -101,6 +103,8 @@ public class dealDamage : MonoBehaviour
                 if (other.GetComponent<EnemyVitals>().isEnemyAlive)
                 {
                     other.GetComponent<EnemyVitals>().ReduceHealth();
+                    other.GetComponent<EnemyVitals>().ReduceHealth();
+
                     Debug.Log("Enemy health reduced");
                     // LastDamageTime = Time.time;
                 }
