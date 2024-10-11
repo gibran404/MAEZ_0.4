@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using StarterAssets;
+using Tayx.Graphy.Fps;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,8 +26,10 @@ public class PlayerItemsandVitals : MonoBehaviour
     [Header("Other")]
 
     public Text vitalsText;
+    public GameObject graphy;
     public Text healthPotionText;
     public Text manaPotionText;
+    public bool debugText = false;
 
     public GameObject sword;
     public GameObject torch;
@@ -45,6 +48,8 @@ public class PlayerItemsandVitals : MonoBehaviour
         healthBar.GetComponent<VitalBar>().setVital(health);
         stamBar.GetComponent<VitalBar>().setVital(stamina);
 
+        debugText = false;
+
         // lastHitTime = Time.time;
 
         // health = 100;
@@ -62,7 +67,11 @@ public class PlayerItemsandVitals : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateVitals();
+        if (debugText)
+        {        
+            updateVitals();
+        }
+
         if (health <= 0 && isplayerAlive)
         {
             Debug.Log("player died");
@@ -98,6 +107,15 @@ public class PlayerItemsandVitals : MonoBehaviour
                 manaBar.GetComponent<VitalBar>().vitalDeduct(100);
                 FlipTorch();
             }
+        }
+
+        // if tilda is pressed enable debug text
+        if (Input.GetKeyDown(KeyCode.BackQuote))
+        {
+            debugText = !debugText;
+
+            vitalsText.gameObject.SetActive(debugText);
+            graphy.SetActive(debugText);
         }
 
 

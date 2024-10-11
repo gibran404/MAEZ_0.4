@@ -2073,8 +2073,10 @@ MonoBehaviour:
   stamBar: {fileID: 1875743244}
   manaBar: {fileID: 2090409949}
   vitalsText: {fileID: 1028050106}
+  graphy: {fileID: 993042451}
   healthPotionText: {fileID: 1440134833}
   manaPotionText: {fileID: 560597194}
+  debugText: 0
   sword: {fileID: 1449306475}
   torch: {fileID: 9101000308136338489}
 --- !u!4 &531603768
@@ -3125,19 +3127,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_fpsModuleState
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_ramModuleState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_audioModuleState
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_advancedModuleState
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22415034, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3285,11 +3287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22493042, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22493042, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -355.89996
+      value: -276
       objectReference: {fileID: 0}
     - target: {fileID: 224000010140091624, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3336,6 +3338,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+--- !u!1 &993042451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 177638, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+  m_PrefabInstance: {fileID: 993042450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &998558627
 GameObject:
   m_ObjectHideFlags: 0
@@ -3571,7 +3578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1028050105
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6910,19 +6917,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1303543878327930191, guid: 04dfbf18ca4767b43970c1493b27780c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.61290807
       objectReference: {fileID: 0}
     - target: {fileID: 1303543878327930191, guid: 04dfbf18ca4767b43970c1493b27780c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.076929
       objectReference: {fileID: 0}
     - target: {fileID: 1303543878327930191, guid: 04dfbf18ca4767b43970c1493b27780c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.78027827
       objectReference: {fileID: 0}
     - target: {fileID: 1303543878327930191, guid: 04dfbf18ca4767b43970c1493b27780c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.09793645
       objectReference: {fileID: 0}
     - target: {fileID: 1999292536564302056, guid: 04dfbf18ca4767b43970c1493b27780c, type: 3}
       propertyPath: SprintSpeed
