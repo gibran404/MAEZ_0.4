@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelTransition : MonoBehaviour
 {
+    public GameObject E_label;
     bool playerInZone;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entered the level transition trigger");
+            // Debug.Log("Player entered the level transition trigger");
+            E_label.SetActive(true);
             playerInZone = true;
         }
     }
@@ -19,7 +21,8 @@ public class LevelTransition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player exited the level transition trigger");
+            // Debug.Log("Player exited the level transition trigger");
+            E_label.SetActive(false);
             playerInZone = false;
         }
     }

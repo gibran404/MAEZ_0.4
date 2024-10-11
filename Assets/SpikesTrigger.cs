@@ -7,6 +7,9 @@ public class SpikesTrigger : MonoBehaviour
     public GameObject Spikes;
     public bool triggered = false;
     private Vector3 SpikesDownPos;
+
+    public AudioClip SpikesSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,7 @@ public class SpikesTrigger : MonoBehaviour
             triggered = true;
             if (Spikes.transform.position == SpikesDownPos)
             {
+                
                 transform.position += new Vector3(0, -0.05f, 0);
                 StartCoroutine(ActivateSpikes());
             }
@@ -39,6 +43,8 @@ public class SpikesTrigger : MonoBehaviour
     IEnumerator ActivateSpikes()
     {
         yield return new WaitForSeconds(0.5f);
+
+        AudioSource.PlayClipAtPoint(SpikesSound, transform.position);
         Debug.Log("Spikes Activated");
         Spikes.transform.position += new Vector3(0, 2, 0);
         StartCoroutine(ResetSpikes());
