@@ -22,6 +22,8 @@ public class EnemyVitals : MonoBehaviour
     public GameObject HealthTwoThirds;
     public GameObject HealthOneThird;
 
+    public GameObject globalLight;
+
 
 
     // Start is called before the first frame update
@@ -29,7 +31,7 @@ public class EnemyVitals : MonoBehaviour
     {
         lastHitTime = Time.time;
 
-        health = 100 + (GameVariables.DungeonSize.x * 5);
+        health = 100 + ((GameVariables.DungeonSize.x + 2) * 10);
         initialHealth = health;
 
         // health = 100;
@@ -58,7 +60,7 @@ public class EnemyVitals : MonoBehaviour
             GetComponent<EnemyFollow>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<CapsuleCollider>().enabled = false;
-
+            globalLight.SetActive(false);
             GetComponent<AudioSource>().Stop();
 
             // disable the parent of the healthFull gameobject

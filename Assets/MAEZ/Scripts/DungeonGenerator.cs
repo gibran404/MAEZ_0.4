@@ -80,6 +80,8 @@ public class DungeonGenerator : MonoBehaviour
 
     void GenerateDungeon()
     {
+        bool enderRoomPlaced = false;  // Flag to track if the ender room has been placed
+
         for (int i = 0; i < size.x; i++)
         {
             for (int j = 0; j < size.y; j++)
@@ -90,13 +92,14 @@ public class DungeonGenerator : MonoBehaviour
                     int randomRoom = -1;
                     List<int> availableRooms = new List<int>();
 
-                    // Check if this is the last cell that was visited
-                    bool isLastCell = (i + j * size.x) == lastCell;
+                    // Check if the current position is in the last row or column
+                    bool isInLastRowOrColumn = (i == size.x - 1 || j == size.y - 1);
 
-                    if (isLastCell)
+                    if (isInLastRowOrColumn && !enderRoomPlaced)
                     {
-                        // Force the last room in the array to be placed
-                        randomRoom = rooms.Length - 1; // Index of the last room in the array
+                        // Place the ender room (last room in the array)
+                        randomRoom = rooms.Length - 1;  // Last room in the array is the ender room
+                        enderRoomPlaced = true;         // Ensure the ender room is only placed once
                     }
                     else
                     {
@@ -138,16 +141,8 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-
-        // add later vvv //////////////////////////////////////////////////////////////////////////////////
-
-
-        // Now that all rooms are generated, build the NavMesh
-        // BuildDungeonNavMesh();
-        
-
-        // add later ^^^ //////////////////////////////////////////////////////////////////////////////////
     }
+
 
 
     void MazeGenerator()

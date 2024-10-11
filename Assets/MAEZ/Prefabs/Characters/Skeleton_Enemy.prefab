@@ -533,6 +533,7 @@ MonoBehaviour:
   HealthFull: {fileID: 4193368538466733219}
   HealthTwoThirds: {fileID: 5489253433488340249}
   HealthOneThird: {fileID: 5761473589428460486}
+  globalLight: {fileID: 3002709446464914784}
 --- !u!82 &1381411758098244227
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1366,7 +1367,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.6
   m_Range: 2.81
   m_SpotAngle: 33.5
   m_InnerSpotAngle: 21.80208
