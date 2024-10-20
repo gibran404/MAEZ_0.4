@@ -3,7 +3,7 @@ using UnityEngine;
 public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenu;  // Drag your pause menu UI here
-    private bool isPaused = false;
+    public static bool isPaused = false;
 
     void Start()
     {
@@ -60,4 +60,23 @@ public class PauseMenuController : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
     }
+
+    public void HighSettings()
+    {
+        QualitySettings.SetQualityLevel(2);
+        Debug.Log("High Settings Set");
+    }
+
+    public void MediumSettings()
+    {
+        QualitySettings.SetQualityLevel(1);
+        Debug.Log("Medium Settings Set");
+    }
+
+    public void LowSettings()
+    {
+        QualitySettings.SetQualityLevel(0);
+        Debug.Log("Low Settings Set");
+    }
+
 }

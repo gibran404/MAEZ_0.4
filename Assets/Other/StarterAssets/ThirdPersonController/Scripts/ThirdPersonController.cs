@@ -140,123 +140,19 @@ namespace StarterAssets
             _hasAnimator = TryGetComponent(out _animator);
 
             GroundedCheck();
-            Move();
-            OtherChecks();
 
-        }
-
-        private void OtherChecks()
-        {
-            //Attack
-
-            // if left mouse button held down
-            if (Mouse.current.leftButton.isPressed)
+            if (UIVariables.isUiEnabled)
             {
-                // face 90 degrees to the right of the direction cinemachine camera is facing
-                float targetAngle = CinemachineCameraTarget.transform.rotation.eulerAngles.y + 90.0f;
-                float smoothedAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.y, targetAngle, Time.deltaTime * 4);
-                transform.rotation = Quaternion.Euler(0.0f, smoothedAngle, 0.0f);
-
-                Attacking = true;
-                _animator.SetBool("Attacking", true);
-            }
-            else if (!Mouse.current.leftButton.isPressed && _animator.GetBool("Attacking") == true)
-            {
-                Attacking = false;
-                _animator.SetBool("Attacking", false);
-            }
-
-
-
-            //Block
-            if (Mouse.current.rightButton.isPressed && !Attacking)
-            {
-                // float targetAngle = CinemachineCameraTarget.transform.rotation.eulerAngles.y + 90.0f;
-                // float smoothedAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.y, targetAngle, Time.deltaTime * 4);
-                // transform.rotation = Quaternion.Euler(0.0f, smoothedAngle, 0.0f);
-
-                Blocked = true;
-                _animator.SetBool("Blocked", true);
-            }
-            else if (!Mouse.current.rightButton.isPressed && _animator.GetBool("Blocked") == true)
-            {
-                Blocked = false;
-                _animator.SetBool("Blocked", false);
-            }
-
-
-            //Interacting
-            if (Input.GetKeyDown(KeyCode.E) && !Attacking && !Blocked)
-            {
-                Collider[] colliders = Physics.OverlapSphere(transform.position, 2f);
-                bool doorNearby = false;
-                foreach (Collider collider in colliders)
-                {
-                    if (collider.CompareTag("Door") || collider.CompareTag("Chest"))
-                    {
-                        doorNearby = true;
-                        break;
-                    }
-                }
-                if (doorNearby)
-                {
-                    _animator.SetBool("Interacting", true);
-                }
+                MoveUI();
+                OtherChecksUI();
             }
             else
             {
-                _animator.SetBool("Interacting", false);
-            }
-
-
-            
-        }
-
-
-        private void LateUpdate()
-        {
-            if (CinemachineCameraTarget != null)
-            {
-                CameraRotation();
-            }
-            else
-            {
-                Debug.LogWarning("CinemachineCameraTarget is not assigned.");
+                Move();
+                OtherChecks();
             }
         }
 
-        private void AssignAnimationIDs()
-        {
-            _animIDWalking = Animator.StringToHash("Walking");
-            _animIDRunning = Animator.StringToHash("Running");
-
-        }
-
-        private void GroundedCheck()
-        {
-            // set sphere position, with offset
-            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
-                transform.position.z);
-            Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
-                QueryTriggerInteraction.Ignore);
-        }
-
-        private void CameraRotation()
-        {
-            if (_input != null && _input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
-            {
-                float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-
-                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
-                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
-            }
-
-            _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
-            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
-
-            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
-                _cinemachineTargetYaw, 0.0f);
-        }
 
         private void Move()
         {
@@ -354,6 +250,272 @@ namespace StarterAssets
                 _animator.SetBool(_animIDWalking, targetSpeed > 0.1f && !_input.sprint);
                 _animator.SetBool(_animIDRunning, _input.sprint && targetSpeed > 0.1f);
             }
+        }
+        private void OtherChecks()
+        {
+            //Attack
+
+            // if left mouse button held down
+            if (Mouse.current.leftButton.isPressed)
+            {
+                // face 90 degrees to the right of the direction cinemachine camera is facing
+                float targetAngle = CinemachineCameraTarget.transform.rotation.eulerAngles.y + 90.0f;
+                float smoothedAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.y, targetAngle, Time.deltaTime * 4);
+                transform.rotation = Quaternion.Euler(0.0f, smoothedAngle, 0.0f);
+
+                Attacking = true;
+                _animator.SetBool("Attacking", true);
+            }
+            else if (!Mouse.current.leftButton.isPressed && _animator.GetBool("Attacking") == true)
+            {
+                Attacking = false;
+                _animator.SetBool("Attacking", false);
+            }
+
+
+
+            //Block
+            if (Mouse.current.rightButton.isPressed && !Attacking)
+            {
+                // float targetAngle = CinemachineCameraTarget.transform.rotation.eulerAngles.y + 90.0f;
+                // float smoothedAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.y, targetAngle, Time.deltaTime * 4);
+                // transform.rotation = Quaternion.Euler(0.0f, smoothedAngle, 0.0f);
+
+                Blocked = true;
+                _animator.SetBool("Blocked", true);
+            }
+            else if (!Mouse.current.rightButton.isPressed && _animator.GetBool("Blocked") == true)
+            {
+                Blocked = false;
+                _animator.SetBool("Blocked", false);
+            }
+
+
+            //Interacting
+            if (Input.GetKeyDown(KeyCode.E) && !Attacking && !Blocked)
+            {
+                Collider[] colliders = Physics.OverlapSphere(transform.position, 2f);
+                bool doorNearby = false;
+                foreach (Collider collider in colliders)
+                {
+                    if (collider.CompareTag("Door") || collider.CompareTag("Chest"))
+                    {
+                        doorNearby = true;
+                        break;
+                    }
+                }
+                if (doorNearby)
+                {
+                    _animator.SetBool("Interacting", true);
+                }
+            }
+            else
+            {
+                _animator.SetBool("Interacting", false);
+            }
+
+
+            
+        }
+
+        public Joystick joystick;
+        private void MoveUI()
+        {
+            float Gravity = -30f;
+            float targetSpeed; // Define target speed based on whether sprinting is enabled
+
+            if (joystick.Vertical > 0.9f && !Blocked && !Attacking)
+            {
+                if (PlayerItemsandVitals.stamina > 1 && SprintFlag)
+                {
+                    targetSpeed = SprintSpeed;
+                    PlayerManager.GetComponent<PlayerItemsandVitals>().reduceStamina();
+                }
+                else
+                {
+                    SprintFlag = false;
+                    targetSpeed = MoveSpeed;
+                    PlayerManager.GetComponent<PlayerItemsandVitals>().regenStamina();
+                }
+            }
+            else if (!Blocked && !Attacking)
+            {
+                if (PlayerItemsandVitals.stamina > 5)
+                {
+                    SprintFlag = true;
+                }
+                targetSpeed = MoveSpeed;
+                PlayerManager.GetComponent<PlayerItemsandVitals>().regenStamina();
+            }
+            else
+            {
+                targetSpeed = 0.5f;
+            }
+
+            PlayFootstepAudio();
+
+            if (joystick.Horizontal == 0 && joystick.Vertical == 0) targetSpeed = 0.0f;
+
+            float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
+
+            float speedOffset = 0.1f;
+            float inputMagnitude = 1f; // Using full magnitude for joystick movement
+
+            if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
+            {
+                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
+                _speed = Mathf.Round(_speed * 1000f) / 1000f;
+            }
+            else
+            {
+                _speed = targetSpeed;
+            }
+
+            _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
+            if (_animationBlend < 0.01f) _animationBlend = 0f;
+
+            Vector3 inputDirection = new Vector3(joystick.Horizontal, 0.0f, joystick.Vertical).normalized;
+
+            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+            {
+                _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
+                                    _mainCamera.transform.eulerAngles.y;
+                float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, RotationSmoothTime);
+
+                transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+            }
+
+            Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+
+            // Apply gravity
+            if (_controller.isGrounded)
+            {
+                _verticalVelocity = -0.5f;
+            }
+            else
+            {
+                _verticalVelocity += Gravity * Time.deltaTime;
+            }
+
+            // Move the player
+            _controller.Move((targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime));
+
+            // Update animator if using character
+            if (_hasAnimator)
+            {
+                _animator.SetBool(_animIDWalking, targetSpeed > 0.1f && !SprintFlag);
+                _animator.SetBool(_animIDRunning, SprintFlag && targetSpeed > 0.1f);
+            }
+        }
+
+        private void OtherChecksUI()
+        {
+            //Attack
+            if (UIVariables.UIAttacking)
+            {
+                // face 90 degrees to the right of the direction cinemachine camera is facing
+                float targetAngle = CinemachineCameraTarget.transform.rotation.eulerAngles.y + 90.0f;
+                float smoothedAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.y, targetAngle, Time.deltaTime * 4);
+                transform.rotation = Quaternion.Euler(0.0f, smoothedAngle, 0.0f);
+
+                Attacking = true;
+                _animator.SetBool("Attacking", true);
+            }
+            else if (!UIVariables.UIAttacking && _animator.GetBool("Attacking") == true)
+            {
+                Attacking = false;
+                _animator.SetBool("Attacking", false);
+            }
+
+
+
+            //Block
+            if (UIVariables.UIBlocked && !Attacking)
+            {
+                // float targetAngle = CinemachineCameraTarget.transform.rotation.eulerAngles.y + 90.0f;
+                // float smoothedAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.y, targetAngle, Time.deltaTime * 4);
+                // transform.rotation = Quaternion.Euler(0.0f, smoothedAngle, 0.0f);
+
+                Blocked = true;
+                _animator.SetBool("Blocked", true);
+            }
+            else if (!UIVariables.UIBlocked && _animator.GetBool("Blocked") == true)
+            {
+                Blocked = false;
+                _animator.SetBool("Blocked", false);
+            }
+
+
+            //Interacting
+            if (UIVariables.UIE && !Attacking && !Blocked)
+            {
+                Collider[] colliders = Physics.OverlapSphere(transform.position, 2f);
+                bool doorNearby = false;
+                foreach (Collider collider in colliders)
+                {
+                    if (collider.CompareTag("Door") || collider.CompareTag("Chest"))
+                    {
+                        doorNearby = true;
+                        break;
+                    }
+                }
+                if (doorNearby)
+                {
+                    _animator.SetBool("Interacting", true);
+                }
+            }
+            else
+            {
+                _animator.SetBool("Interacting", false);
+            }
+
+
+            
+        }
+
+        private void LateUpdate()
+        {
+            if (CinemachineCameraTarget != null)
+            {
+                CameraRotation();
+            }
+            else
+            {
+                Debug.LogWarning("CinemachineCameraTarget is not assigned.");
+            }
+        }
+
+        private void AssignAnimationIDs()
+        {
+            _animIDWalking = Animator.StringToHash("Walking");
+            _animIDRunning = Animator.StringToHash("Running");
+
+        }
+
+        private void GroundedCheck()
+        {
+            // set sphere position, with offset
+            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
+                transform.position.z);
+            Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
+                QueryTriggerInteraction.Ignore);
+        }
+
+        private void CameraRotation()
+        {
+            if (_input != null && _input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
+            {
+                float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+
+                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
+                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
+            }
+
+            _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
+            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
+
+            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
+                _cinemachineTargetYaw, 0.0f);
         }
 
         private float footstepTimer = 0.0f;

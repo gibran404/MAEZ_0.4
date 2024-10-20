@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Attributes;
 using StarterAssets;
 using Tayx.Graphy.Fps;
 using UnityEngine;
@@ -121,23 +122,12 @@ public class PlayerItemsandVitals : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            if (healthPotionCount > 0 && health < 100)
-            {
-                RegenHealth();
-                healthPotionCount--;
-                healthPotionText.text = healthPotionCount.ToString();
-            }
+            HealthPotion();
         }
-        if (Input.GetKeyDown(KeyCode.M) && mana < 100)
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            if(manaPotionCount > 0)
-            {   
-                RegenMana();
-                manaPotionCount--;
-                manaPotionText.text = manaPotionCount.ToString();
-            }
+            ManaPotion();
         }
-
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             //flip between sword and torch
@@ -146,10 +136,28 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     }
 
-    void FlipTorch()
+    public void HealthPotion()
     {
-        
+        if (healthPotionCount > 0 && health < 100)
+        {
+            RegenHealth();
+            healthPotionCount--;
+            healthPotionText.text = healthPotionCount.ToString();
+        }
+    }
 
+    public void ManaPotion()
+    {
+        if (manaPotionCount > 0 && mana < 100)
+        {
+            RegenMana();
+            manaPotionCount--;
+            manaPotionText.text = manaPotionCount.ToString();
+        }
+    }
+
+    public void FlipTorch()
+    {
         if (torch.activeSelf)
         {
             torch.SetActive(false);
@@ -263,4 +271,6 @@ public class PlayerItemsandVitals : MonoBehaviour
     //         sanity -= 0.1f;
     //     }
     // }
+
+
 }
