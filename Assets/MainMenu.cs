@@ -8,6 +8,12 @@ public class MainMenu : MonoBehaviour
     public GameObject NewGamePanel;
     public GameObject LoadPanel;
 
+    void Start()
+    {
+        //fps locked at 60 for consistency
+        Application.targetFrameRate = 60;
+    }
+
     public void NewGame()
     {
         MainMenuPanel.SetActive(false);

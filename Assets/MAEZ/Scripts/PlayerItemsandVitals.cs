@@ -45,6 +45,10 @@ public class PlayerItemsandVitals : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //locked at 60fps
+        Application.targetFrameRate = 60;
+
+
         manaBar.GetComponent<VitalBar>().setVital(mana);
         healthBar.GetComponent<VitalBar>().setVital(health);
         stamBar.GetComponent<VitalBar>().setVital(stamina);
@@ -63,6 +67,7 @@ public class PlayerItemsandVitals : MonoBehaviour
 
         sword.SetActive(true);
         torch.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -138,6 +143,11 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     public void HealthPotion()
     {
+        if (PauseMenuController.isPaused)
+        {
+            return;
+        }
+        
         if (healthPotionCount > 0 && health < 100)
         {
             RegenHealth();
@@ -148,6 +158,11 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     public void ManaPotion()
     {
+        if (PauseMenuController.isPaused)
+        {
+            return;
+        }
+
         if (manaPotionCount > 0 && mana < 100)
         {
             RegenMana();
@@ -158,6 +173,11 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     public void FlipTorch()
     {
+        if (PauseMenuController.isPaused)
+        {
+            return;
+        }
+
         if (torch.activeSelf)
         {
             torch.SetActive(false);
@@ -243,16 +263,16 @@ public class PlayerItemsandVitals : MonoBehaviour
 
     public void reduceStamina() // called from player controller script
     {
-        stamina -= 0.4f;
-        stamBar.GetComponent<VitalBar>().vitalDeduct(0.4f);
+        stamina -= 0.3f;
+        stamBar.GetComponent<VitalBar>().vitalDeduct(0.3f);
     }
 
     public void regenStamina() // called from player controller script
     {
         if (stamina < 100)
         {
-            stamina += 0.5f;
-            stamBar.GetComponent<VitalBar>().vitalRegen(0.5f);
+            stamina += 0.4f;
+            stamBar.GetComponent<VitalBar>().vitalRegen(0.4f);
         }
     }
 

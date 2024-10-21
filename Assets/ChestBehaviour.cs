@@ -14,7 +14,7 @@ public class ChestBehaviour : MonoBehaviour
     void Update()
     {
         //when player is in range and presses E, destroy the chest and spawn the items
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange && (Input.GetKeyDown(KeyCode.E) || UIVariables.UIE ))
         {
             AudioSource.PlayClipAtPoint(openSound, transform.position);
 

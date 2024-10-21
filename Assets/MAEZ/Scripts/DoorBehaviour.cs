@@ -46,7 +46,7 @@ public class DoorBehaviour : MonoBehaviour
                 E_Label.SetActive(true);
             }
 
-            if (Input.GetKeyDown(KeyCode.E) && canToggleDoor)
+            if ((Input.GetKeyDown(KeyCode.E) || UIVariables.UIE) && canToggleDoor)
             {
 
                 AudioSource.PlayClipAtPoint(doorSound, transform.position);

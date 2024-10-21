@@ -323,8 +323,12 @@ namespace StarterAssets
         {
             float Gravity = -30f;
             float targetSpeed; // Define target speed based on whether sprinting is enabled
+            
 
-            if (joystick.Vertical > 0.9f && !Blocked && !Attacking)
+            float joystickMagnitude = Mathf.Sqrt(joystick.Vertical * joystick.Vertical + joystick.Horizontal * joystick.Horizontal);
+            // Debug.Log(joystickMagnitude);
+
+            if (joystickMagnitude > 0.9f && !Blocked && !Attacking)
             {
                 if (PlayerItemsandVitals.stamina > 1 && SprintFlag)
                 {

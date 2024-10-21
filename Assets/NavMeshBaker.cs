@@ -25,12 +25,20 @@ public class NavMeshBaker : MonoBehaviour
             BakeNavMesh();
             Debug.Log("NavMesh baked!");
         }
+
+        if (UIVariables.SprintFlag && UIVariables.UIAttacking && UIVariables.UIBlocked && UIVariables.UIE)
+        {
+            navMeshSurface.RemoveData();
+            BakeNavMesh();
+            Debug.Log("NavMesh baked!");
+        }
+        
     }
 
     // Function to bake the NavMesh after a delay
     IEnumerator BakeNavMeshAfterDelay()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         BakeNavMesh();
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIVariables : MonoBehaviour
 {
+    [SerializeField]
     public bool UiEnabled;
     public static bool isUiEnabled;
     public static float MoveSpeed = 2.0f;
@@ -21,38 +22,55 @@ public class UIVariables : MonoBehaviour
 
     void Start()
     {
-
-        Application.targetFrameRate = 120;
-
         isUiEnabled = UiEnabled;
+
         if (UiEnabled)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+
+            ISOCam.GetComponent<OrbitCameraController>().enabled = false;
         }
         else
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            UI.SetActive(false);
         }
     }
 
     void Update()
     {
+
+
+
+
+
         // if ui is enables but the cursor is locked, 
         // unlock the cursor and make it visible
-        if (isUiEnabled && Cursor.lockState == CursorLockMode.Locked)
+        if (isUiEnabled)
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            UI.SetActive(true);
+
+            if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+        }
+        else
+        {
+            UI.SetActive(false);
+            // Cursor.visible = false;
+            // Cursor.lockState = CursorLockMode.Locked;
         }
         // if ui is disabled but the cursor is unlocked,
         // lock the cursor and make it invisible
-        else if (!isUiEnabled && Cursor.lockState == CursorLockMode.None)
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        // else if (!isUiEnabled && Cursor.lockState == CursorLockMode.None)
+        // {
+        //     Cursor.visible = false;
+        //     Cursor.lockState = CursorLockMode.Locked;
+        // }
 
         //if player dead, disable all of the UI
         if (PlayerItemsandVitals.isplayerAlive == false)
@@ -64,7 +82,7 @@ public class UIVariables : MonoBehaviour
         {
             UI.SetActive(false);
         }
-        else if (!PauseMenuController.isPaused && !UI.activeSelf)
+        else if (!PauseMenuController.isPaused && !UI.activeSelf && isUiEnabled)
         {
             UI.SetActive(true);
         }

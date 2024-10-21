@@ -43,7 +43,7 @@ public class LevelTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInZone)
+        if ((Input.GetKeyDown(KeyCode.E) || UIVariables.UIE ) && playerInZone)
         {
             NextLevel();
         }

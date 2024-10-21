@@ -33,7 +33,7 @@ public class dealDamage : MonoBehaviour
         if (itemOwner == "Player")
         {
             // and left mouse button is held down
-            if (other.tag == "Enemy" && Mouse.current.leftButton.isPressed)
+            if (other.tag == "Enemy" && (Mouse.current.leftButton.isPressed || UIVariables.UIAttacking))
             {
                 // if (Time.time - LastDamageTime < 1f)
                 // {
